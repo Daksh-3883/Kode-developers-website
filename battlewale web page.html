@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BattleWaale – Konw more</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+  scroll-behavior: smooth;
+}
+    /* === Page fade-in === */
+    body {
+      opacity: 0;
+      animation: fadeInPage 1.2s ease-out forwards;
+    }
+    @keyframes fadeInPage {
+      to { opacity: 1; }
+    }
+
+    /* === Blob Background === */
+    .animated-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1; overflow: hidden;
+      filter: url(#gooey);
+    }
+    .blob {
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #ff6ec7, #7873f5);
+      animation: move 20s infinite alternate ease-in-out;
+      mix-blend-mode: screen; opacity: 0.6;
+    }
+    .blob:nth-child(2) {
+      background: radial-gradient(circle at 30% 30%, #4ade80, #06b6d4);
+      left: 40%; top: 20%;
+      animation-duration: 25s; animation-delay: -10s;
+    }
+    .blob:nth-child(3) {
+      background: radial-gradient(circle at 30% 30%, #facc15, #f97316);
+      left: 20%; bottom: 10%;
+      animation-duration: 18s; animation-delay: -5s;
+    }
+    @keyframes move {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(120px, -150px) scale(1.2); }
+      100% { transform: translate(-150px, 120px) scale(0.9); }
+    }
+
+    /* === Fade-up animation for sections === */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1s ease-out forwards;
+    }
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .delay-1 { animation-delay: 0.3s; }
+    .delay-2 { animation-delay: 0.6s; }
+    .delay-3 { animation-delay: 0.9s; }
+
+    /* Smooth hover */
+    a, .hover\:scale-105 {
+      transition: all 0.3s ease;
+    }
+
+    /* Tables */
+    table { width: 100%; }
+    th, td { padding: 12px; }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Animated Background -->
+  <div class="animated-bg">
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full bg-gray-900/70 backdrop-blur-md z-50 shadow-md">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-2xl font-bold text-teal-400 hover:scale-110 transition">BattleWaale</h1>
+      <ul class="flex gap-6 text-gray-300 font-medium">
+        <li><a href="index.html" class="hover:text-teal-300 hover:scale-110 inline-block">Home</a></li>
+        <li><a href="ChatKode.html" class="hover:text-teal-300 hover:scale-110 inline-block">ChatKode</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="h-screen flex flex-col justify-center items-center text-center px-6">
+    <h2 class="text-5xl md:text-6xl font-extrabold mb-4 fade-up delay-1">
+      Welcome to <span class="text-teal-400">BattleWaale</span>
+    </h2>
+    <p class="text-gray-300 text-lg md:text-xl max-w-2xl fade-up delay-2">
+      Master your fighting skills.
+    </p>
+  </section>
+
+  <!-- Main Content -->
+  <main class="px-6 py-12 max-w-6xl mx-auto space-y-16">
+
+    <section class="py-20 px-6 max-w-5xl mx-auto text-center">
+  <h2 class="text-4xl font-bold mb-6 text-teal-400">BattleWaale – A Game Inspired by Indian Culture</h2>
+  <p class="text-gray-300 leading-relaxed mb-8">
+    BattleWaale is a fast-paced, action-strategy game that blends <b>modern gameplay mechanics</b> 
+    with the richness of <b>Indian culture</b>. Designed for players who love strategy and thrill, 
+    it lets you build your squad, master unique skills, and outsmart opponents in exciting multiplayer battles. 
+  </p>
+  <p class="text-gray-300 leading-relaxed mb-8">
+    The game combines <b>strategy, action, and culture</b> into one engaging experience. 
+    Whether you’re battling 1v1, leading a team, or training offline, BattleWaale challenges your 
+    tactical thinking while keeping the gameplay fun and immersive. Each character is inspired by 
+    elements of India’s diverse heritage, making every match feel fresh and unique.
+  </p>
+  <p class="text-gray-300 leading-relaxed mb-8">
+    With <b>skill-based matchmaking</b>, vibrant character designs, and multiple modes, 
+    BattleWaale is built to keep players hooked — whether you’re a casual gamer or a competitive strategist. 
+  </p>
+
+  <!-- Highlights -->
+  <div class="bg-gray-800 p-8 rounded-xl shadow-lg text-left">
+    <h3 class="text-2xl font-semibold text-teal-400 mb-4">Key Highlights</h3>
+    <ul class="list-disc list-inside space-y-2 text-gray-300">
+      <li>Strategic 1v1 and team-based battles</li>
+      <li>Unique characters inspired by Indian culture</li>
+      <li>Offline training and online multiplayer modes</li>
+      <li>Skill-based matchmaking for fair play</li>
+      <li>Fast-paced, action-driven gameplay</li>
+    </ul>
+  </div>
+
+  <p class="text-gray-300 mt-8">
+    BattleWaale isn’t just a game — it’s a <span class="text-teal-400 font-semibold">cultural adventure</span> 
+    that brings strategy and tradition together in one thrilling experience.
+  </p>
+</section>
+
+    <!-- Developer Info -->
+    <section class="fade-up">
+      <h2 class="text-3xl font-bold text-teal-300 mb-4 border-b border-gray-700 pb-2">Developer Info</h2>
+      <ul class="list-disc list-inside space-y-2 text-gray-300">
+        <li><b>Developer:</b> Kode Developers</li>
+        <li><b>Engine:</b> Python (Kivy)</li>
+        <li><b>Target:</b> Cross-platform (Android)</li>
+        <li><b>Libraries:</b> Kivy, KivyMD, Pillow, JSON, etc.</li>
+      </ul>
+    </section>
+
+    <!-- Features -->
+    <section class="fade-up">
+      <h2 class="text-3xl font-bold text-teal-300 mb-4 border-b border-gray-700 pb-2">Main Features</h2>
+      <ul class="list-disc list-inside space-y-2 text-gray-300">
+        <li>Tactical team-based battles</li>
+        <li>Rank progression from Bronze to Legendary</li>
+        <li>Offline & Online modes</li>
+        <li>Custom badges & 2D art</li>
+      </ul>
+    </section>
+
+    <!-- UI -->
+    <section class="fade-up">
+      <h2 class="text-3xl font-bold text-teal-300 mb-4 border-b border-gray-700 pb-2">User Interface</h2>
+      <ul class="list-disc list-inside space-y-2 text-gray-300">
+        <li>Minimalist responsive design</li>
+        <li>Custom animated icons</li>
+        <li>Lobby with interactive background</li>
+      </ul>
+    </section>
+
+    <!-- Character Tables (FULL POPULATED) -->
+    <section class="fade-up">
+      <h2 class="text-3xl font-bold text-teal-300 mb-6">Character List & Abilities</h2>
+
+      <!-- Common Characters -->
+      <h3 class="text-2xl font-semibold text-yellow-300 mb-3">Common Characters</h3>
+      <div class="overflow-x-auto mb-8">
+        <table class="border border-gray-700 rounded-lg overflow-hidden">
+          <thead class="bg-gray-700 text-teal-300">
+            <tr><th>Name</th><th>DOB</th><th>Native State</th><th>Ability</th></tr>
+          </thead>
+          <tbody class="bg-gray-800 divide-y divide-gray-700 text-gray-300">
+            <tr class="hover:bg-gray-700"><td>Angel</td><td>21 Oct 2007</td><td>U.P.</td><td>Healing Presence – Regenerates 1.5 HP/sec when still</td></tr>
+            <tr class="hover:bg-gray-700"><td>Mohit</td><td>2 Aug 2005</td><td>M.P.</td><td>Athletic Build – Moves 8% faster</td></tr>
+            <tr class="hover:bg-gray-700"><td>Saurabh</td><td>17 Sep 2006</td><td>M.P.</td><td>Mobile Cover – 10% damage reduction while crouched/behind cover</td></tr>
+            <tr class="hover:bg-gray-700"><td>IPS Ajad</td><td>22 Jun 1995</td><td>M.P.</td><td>Crime Instinct – Louder enemy sounds, 20% wider hearing radius</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Uncommon Characters -->
+      <h3 class="text-2xl font-semibold text-green-300 mb-3">Uncommon Characters</h3>
+      <div class="overflow-x-auto mb-8">
+        <table class="border border-gray-700 rounded-lg overflow-hidden">
+          <thead class="bg-gray-700 text-teal-300"><tr><th>Name</th><th>DOB</th><th>Native State</th><th>Ability</th></tr></thead>
+          <tbody class="bg-gray-800 divide-y divide-gray-700 text-gray-300">
+            <tr class="hover:bg-gray-700"><td>Buddha</td><td>19 Sep 1997</td><td>H.P.</td><td>Calm Counter – 15% damage reduction when HP <60</td></tr>
+            <tr class="hover:bg-gray-700"><td>Chirag</td><td>12 Dec 2006</td><td>U.P.</td><td>Flash Bomb – Disables enemy abilities</td></tr>
+            <tr class="hover:bg-gray-700"><td>Johhny</td><td>9 May 2005</td><td>M.P.</td><td>Born Shooter – +5% damage, +15% fire rate</td></tr>
+            <tr class="hover:bg-gray-700"><td>Udit</td><td>17 Jul 2006</td><td>M.P.</td><td>Eagle Eye – Blinds enemies</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Rare Characters -->
+      <h3 class="text-2xl font-semibold text-blue-300 mb-3">Rare Characters</h3>
+      <div class="overflow-x-auto mb-8">
+        <table class="border border-gray-700 rounded-lg overflow-hidden">
+          <thead class="bg-gray-700 text-teal-300"><tr><th>Name</th><th>DOB</th><th>Native State</th><th>Ability</th></tr></thead>
+          <tbody class="bg-gray-800 divide-y divide-gray-700 text-gray-300">
+            <tr class="hover:bg-gray-700"><td>Salmon Bhai</td><td>3 Nov 2004</td><td>U.P.</td><td>Second Chance – Auto-revive after one death</td></tr>
+            <tr class="hover:bg-gray-700"><td>Mr.Tiwari</td><td>9 Dec 2006</td><td>M.P.</td><td>Efficient Support – 25% cheaper items for teammates</td></tr>
+            <tr class="hover:bg-gray-700"><td>Karry</td><td>8 Feb 2006</td><td>Rajasthan</td><td>Sticky Death – Throws sticky bomb at nearest enemy</td></tr>
+            <tr class="hover:bg-gray-700"><td>Habibi</td><td>5 May 2005</td><td>M.P.</td><td>Mirage – Creates clone to distract enemies</td></tr>
+            <tr class="hover:bg-gray-700"><td>Aman</td><td>4 Oct 2007</td><td>West Bengal</td><td>Ghost Step – Invisible for 5 seconds</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Epic Characters -->
+      <h3 class="text-2xl font-semibold text-purple-300 mb-3">Epic Characters</h3>
+      <div class="overflow-x-auto mb-8">
+        <table class="border border-gray-700 rounded-lg overflow-hidden">
+          <thead class="bg-gray-700 text-teal-300"><tr><th>Name</th><th>DOB</th><th>Native State</th><th>Ability</th></tr></thead>
+          <tbody class="bg-gray-800 divide-y divide-gray-700 text-gray-300">
+            <tr class="hover:bg-gray-700"><td>Manku</td><td>18 Feb 2007</td><td>U.P.</td><td>Magnet Field – Diverts enemy bullets and grenades</td></tr>
+            <tr class="hover:bg-gray-700"><td>Shrishti</td><td>30 Nov 2006</td><td>Bihar</td><td>Phoenix Mode – +20% Damage, self-heals 6s</td></tr>
+            <tr class="hover:bg-gray-700"><td>Anjalee</td><td>24 Dec 2006</td><td>Maharashtra</td><td>Shadow Dash – Short teleportation with 2 charges</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Legendary Characters -->
+      <h3 class="text-2xl font-semibold text-red-300 mb-3">Legendary Characters</h3>
+      <div class="overflow-x-auto">
+        <table class="border border-gray-700 rounded-lg overflow-hidden">
+          <thead class="bg-gray-700 text-teal-300"><tr><th>Name</th><th>DOB</th><th>Native State</th><th>Ability</th></tr></thead>
+          <tbody class="bg-gray-800 divide-y divide-gray-700 text-gray-300">
+            <tr class="hover:bg-gray-700"><td>Divya</td><td>19 Oct 2007</td><td>Haryana</td><td>Divine shield – Immune 6s, allies +40% damage resistance</td></tr>
+            <tr class="hover:bg-gray-700"><td>Shivam</td><td>3 Nov 2004</td><td>U.P.</td><td>Death wave – Enemies take +30% damage for 5s</td></tr>
+            <tr class="hover:bg-gray-700"><td>Shree</td><td>16 Oct 2006</td><td>Maharashtra</td><td>Zone maker – Freezes one enemy & slows others in zone</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+    <!-- Ranking -->
+    <section class="fade-up">
+      <h2 class="text-3xl font-bold text-teal-300 mb-4 border-b border-gray-700 pb-2">Ranking System</h2>
+      <ul class="list-disc list-inside space-y-2 text-gray-300">
+        <li>Bronze I–III (510–900 pts)</li>
+        <li>Silver I–III (1000–1500 pts)</li>
+        <li>Gold I–IV (1800–2600 pts)</li>
+        <li>Platinum I–IV (3000–4200 pts)</li>
+        <li>Diamond I–IV (4500–6000 pts)</li>
+        <li>Ruby I–V (6800–10000 pts)</li>
+        <li>Legend I–V (11000–15000 pts)</li>
+      </ul>
+    </section>
+
+    <!-- Upcoming -->
+    <section class="fade-up">
+      <h2 class="text-3xl font-bold text-teal-300 mb-4 border-b border-gray-700 pb-2">Upcoming Features</h2>
+      <ul class="list-disc list-inside space-y-2 text-gray-300">
+        <li>PvP Multiplayer</li>
+        <li>Weapon Customization</li>
+        <li>Character Skins</li>
+        <li>Achievement Badges</li>
+        <li>Cloud Save Integration</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center p-6 mt-10 bg-gray-800 border-t border-gray-700 text-sm text-gray-400">
+    &copy; 2025 Kode Developers. All rights reserved.
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

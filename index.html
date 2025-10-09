@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kode Developers</title>
+  <meta name="description" content="Kode Developers - Building innovative web solutions, apps, and digital tools.">
+  <script src="https://cdn.tailwindcss.com">
+	  // Rating system
+function setRating(stars) {
+  const starsEl = document.querySelectorAll("#rating span");
+  starsEl.forEach((star, i) => {
+    star.classList.toggle("text-yellow-400", i < stars);
+    star.classList.toggle("text-gray-500", i >= stars);
+  });
+  document.getElementById("ratingMsg").classList.remove("hidden");
+}
+</script>
+  <style>
+	  html {
+  scroll-behavior: smooth;
+}
+
+    /* === Page fade-in === */
+    body {
+      opacity: 0;
+      animation: fadeInPage 1.2s ease-out forwards;
+    }
+    @keyframes fadeInPage {
+      to { opacity: 1; }
+    }
+
+        /* === Blob Background === */
+    .animated-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1; overflow: hidden;
+      filter: url(#gooey);
+    }
+    .blob {
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #ff6ec7, #7873f5);
+      animation: move 20s infinite alternate ease-in-out;
+      mix-blend-mode: screen; opacity: 0.6;
+    }
+    .blob:nth-child(2) {
+      background: radial-gradient(circle at 30% 30%, #4ade80, #06b6d4);
+      left: 40%; top: 20%;
+      animation-duration: 25s; animation-delay: -10s;
+    }
+    .blob:nth-child(3) {
+      background: radial-gradient(circle at 30% 30%, #facc15, #f97316);
+      left: 20%; bottom: 10%;
+      animation-duration: 18s; animation-delay: -5s;
+    }
+    @keyframes move {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(120px, -150px) scale(1.2); }
+      100% { transform: translate(-150px, 120px) scale(0.9); }
+    }
+    /* === Fade-up animation for sections === */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1s ease-out forwards;
+    }
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .delay-1 { animation-delay: 0.3s; }
+    .delay-2 { animation-delay: 0.6s; }
+    .delay-3 { animation-delay: 0.9s; }
+
+    /* === Smooth hover === */
+    a, button, .hover\:scale-105 {
+      transition: all 0.3s ease;
+    }
+
+    /* === Popup animation === */
+    #successPopup {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.3s ease;
+    }
+    #successPopup.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Animated Background -->
+  <div class="animated-bg">
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full bg-gray-900/70 backdrop-blur-md z-50 shadow-md fade-up">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-2xl font-bold text-teal-400 hover:scale-110 transition">Kode Developers</h1>
+      <ul class="flex gap-6 text-gray-300 font-medium">
+        <li><a href="#home" class="hover:text-teal-300 hover:scale-110 inline-block">Home</a></li>
+        <li><a href="#about" class="hover:text-teal-300 hover:scale-110 inline-block">About</a></li>
+        <li><a href="#services" class="hover:text-teal-300 hover:scale-110 inline-block">Services</a></li>
+        <li><a href="#projects" class="hover:text-teal-300 hover:scale-110 inline-block">Projects</a></li>
+        <li><a href="#contact" class="hover:text-teal-300 hover:scale-110 inline-block">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-6">
+    <h2 class="text-5xl md:text-7xl font-extrabold mb-4 fade-up delay-1">
+      We Build <span class="text-teal-400">Ideas that live</span>
+    </h2>
+    <p class="text-gray-300 text-lg md:text-xl max-w-2xl fade-up delay-2">
+      Building smarter apps with passion & precision.
+    </p>
+    <a href="#projects" 
+       class="mt-6 px-6 py-3 bg-teal-500 hover:bg-teal-400 rounded-xl text-white font-semibold shadow-lg fade-up delay-3">
+       Explore Projects
+    </a>
+  </section>
+
+  <!-- About -->
+	<!-- logo -->
+<section class="px-6 py-12 max-w-3xl mx-auto text-center fade-up">
+  <img src="kodeDevelopers.png" 
+       alt="Kode Developers logo" 
+       class="rounded-2xl shadow-xl mx-auto hover:scale-105 transition duration-500">
+</section>
+
+  <section id="about" class="py-20 px-6 max-w-6xl mx-auto text-center fade-up">
+    <h3 class="text-3xl font-bold mb-6">About Us</h3>
+    <p class="text-gray-300 leading-relaxed max-w-3xl mx-auto">
+        At Kode Developers, we believe every great product starts with a spark of imagination.
+		Founded by Divyanshu, our journey began with a bold vision: to turn raw ideas into powerful digital realities.
+		Guided by our tagline, “we build ideas that live,” we design and develop solutions that don’t just exist, they thrive, adapt, and make an impact.
+		From sleek websites to scalable applications, our focus is on creating technology that feels alive, purposeful, and future-ready.
+		What sets us apart is our blend of innovation, precision, and human-centered design, because we know it’s not just about code, it’s about people.
+		At Kode Developers, we’re not just building projects; we’re building possibilities, and we’re excited to bring yours to life.At Kode Developers, we believe every great product starts with a spark of imagination.
+    </p>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-20 px-6 bg-gray-800/70 fade-up">
+    <h3 class="text-3xl font-bold text-center mb-12">Our Services</h3>
+    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl">
+        <h4 class="text-xl font-semibold mb-3 text-teal-400">AI-Powered Apps</h4>
+        <p class="text-gray-400">Smart tools like <b>ChatKode</b>, your AI chatbot & coding assistant.</p>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl">
+        <h4 class="text-xl font-semibold mb-3 text-teal-400">Game Development</h4>
+        <p class="text-gray-400">Exciting projects like <b>BattleWale</b>, inspired by Indian culture.</p>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl">
+        <h4 class="text-xl font-semibold mb-3 text-teal-400">Web & Mobile Apps</h4>
+        <p class="text-gray-400">Creative utilities, interactive platforms, and responsive designs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-20 px-6 max-w-7xl mx-auto fade-up">
+    <h3 class="text-3xl font-bold text-center mb-12">Our Projects</h3>
+    <div class="grid md:grid-cols-2 gap-10">
+      <div class="bg-gray-800 p-8 rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition">
+        <h4 class="text-2xl font-bold mb-3">ChatKode</h4>
+        <p class="text-gray-400">ChatKode is an AI-powered assistant designed to help developers, students, and tech enthusiasts 
+          build apps faster and smarter. It offers instant code suggestions, real-time fixes, and personalized development tips.</p>
+	<ul class="list-disc list-inside mb-5 space-y-2 text-gray-400">
+          <li class="hover:translate-x-2 transition duration-300">Chat-based coding assistance</li>
+          <li class="hover:translate-x-2 transition duration-300">Supports all programming languages</li>
+          <li class="hover:translate-x-2 transition duration-300">Personalized suggestions</li>
+          <li class="hover:translate-x-2 transition duration-300">Boosts productivity</li>
+        </ul>
+        <a href="ChatKode.html" class="text-teal-400 underline mt-3 inline-block hover:text-teal-300">Know More →</a>
+      </div>
+      <div class="bg-gray-800 p-8 rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition">
+        <h4 class="text-2xl font-bold mb-3">BattleWale</h4>
+        <p class="text-gray-400">BattleWaale is a fast-paced, action-strategy game inspired by Indian culture. Build your squad, master unique skills, 
+          and outsmart opponents in thrilling multiplayer battles. It's highlights are:-</p>
+        <ul class="list-disc list-inside mb-5 space-y-2 text-gray-400">
+          <li class="hover:translate-x-2 transition">Strategic 1v1 & team battles</li>
+          <li class="hover:translate-x-2 transition">Unique Indian-inspired characters</li>
+          <li class="hover:translate-x-2 transition">Offline training + online modes</li>
+          <li class="hover:translate-x-2 transition">Skill-based matchmaking</li>
+        </ul>
+        <a href="BattleWale web page.html" class="text-teal-400 underline mt-3 inline-block hover:text-teal-300">Know More →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 px-6 bg-gray-800/70 text-center fade-up">
+    <h3 class="text-3xl font-bold mb-6 text-white">Get in Touch</h3>
+
+    <div class="w-full max-w-3xl mx-auto relative">
+      <iframe 
+        id="contactForm"
+        src="https://docs.google.com/forms/d/e/1FAIpQLScORZjd4WH-oeUJ7bxB7uLqxcjX06RbojgIORBHoOIxoTtHaA/viewform?embedded=true" 
+        width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0"
+        class="rounded-xl shadow-lg border border-gray-700">
+        Loading…
+      </iframe>
+
+      <!-- Success Popup -->
+      <div id="successPopup" 
+           class="hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                  bg-gray-900 text-white p-6 rounded-xl shadow-2xl border border-teal-500 w-80">
+        <h4 class="text-xl font-bold text-teal-400 mb-2">✅ Message Sent!</h4>
+        <p class="text-gray-300">Thank you for reaching out. We'll get back to you soon.</p>
+        <button onclick="closePopup()" 
+                class="mt-4 px-4 py-2 bg-teal-500 hover:bg-teal-400 rounded-lg font-semibold transition">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <p class="text-gray-400 mt-8 text-lg">
+      Or email us directly at 
+      <a href="mailto:divyanshu@kodedevelopers.org" class="text-teal-400 hover:text-teal-300 underline">
+        divyanshu@kodedevelopers.org
+      </a>
+    </p>
+<!-- Rating System -->
+<div class="mt-12">
+  <h4 class="text-2xl font-semibold mb-4">Rate Your Experience</h4>
+  <div id="rating" class="flex justify-center gap-2 text-4xl text-gray-500 cursor-pointer">
+    <span onclick="setRating(1)">★</span>
+    <span onclick="setRating(2)">★</span>
+    <span onclick="setRating(3)">★</span>
+    <span onclick="setRating(4)">★</span>
+    <span onclick="setRating(5)">★</span>
+  </div>
+  <p id="ratingMsg" class="mt-4 text-teal-400 font-medium hidden">Thanks for your feedback! 🌟</p>
+</div>
+
+  </section>
+
+ <!-- Firebase SDKs -->
+<script type="module">
+  // Firebase imports
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+  import { getFirestore, addDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-analytics.js";
+
+  // ✅ Your Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyBVRZrGx78BmGmPJefevUU_eVko7isfkHs",
+    authDomain: "website-b25f8.firebaseapp.com",
+    projectId: "website-b25f8",
+    storageBucket: "website-b25f8.firebasestorage.app",
+    messagingSenderId: "493868723517",
+    appId: "1:493868723517:web:152b112e64dfe9d28e6954",
+    measurementId: "G-19W6S73YRE"
+  };
+
+  // Init Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const analytics = getAnalytics(app);
+
+  // === Rating System ===
+  async function setRating(stars) {
+    const starsEl = document.querySelectorAll("#rating span");
+    starsEl.forEach((star, i) => {
+      star.classList.toggle("text-yellow-400", i < stars);
+      star.classList.toggle("text-gray-500", i >= stars);
+    });
+
+    document.getElementById("ratingMsg").classList.remove("hidden");
+    document.getElementById("ratingMsg").innerText = `Thanks! You rated us ${stars}★`;
+
+    try {
+      await addDoc(collection(db, "ratings"), {
+        stars: stars,
+        timestamp: new Date()
+      });
+      console.log("✅ Rating saved:", stars);
+      loadAverageRating();
+    } catch (e) {
+      console.error("❌ Error saving rating: ", e);
+    }
+  }
+
+  // === Load Average Rating ===
+  async function loadAverageRating() {
+    const snapshot = await getDocs(collection(db, "ratings"));
+    let total = 0, count = 0;
+
+    snapshot.forEach(doc => {
+      total += doc.data().stars;
+      count++;
+    });
+
+    if (count > 0) {
+      const avg = (total / count).toFixed(1);
+      document.getElementById("avgRating").innerText = `⭐ ${avg} / 5 (${count} reviews)`;
+    }
+  }
+
+  // Load avg on page load
+  loadAverageRating();
+
+  // Expose to global scope so HTML onclick works
+  window.setRating = setRating;
+</script>
+
+ <!-- Footer -->
+  <footer class="text-center p-6 mt-10 bg-gray-800 border-t border-gray-700 text-sm text-gray-400">
+    &copy; 2025 Kode Developers. All rights reserved.
+  </footer>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

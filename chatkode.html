@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ChatKode – Know More</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html {
+  scroll-behavior: smooth;
+}
+    /* Fade-in for whole page */
+    body {
+      opacity: 0;
+      animation: fadeInPage 1.2s ease-out forwards;
+    }
+    @keyframes fadeInPage {
+      to { opacity: 1; }
+    }
+
+    /* Blob Background */
+    .animated-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1; overflow: hidden;
+      filter: url(#gooey);
+    }
+    .blob {
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #06b6d4, #3b82f6);
+      animation: move 20s infinite alternate ease-in-out;
+      mix-blend-mode: screen; opacity: 0.6;
+    }
+    .blob:nth-child(2) {
+      background: radial-gradient(circle at 30% 30%, #f97316, #facc15);
+      left: 40%; top: 20%;
+      animation-duration: 25s; animation-delay: -10s;
+    }
+    .blob:nth-child(3) {
+      background: radial-gradient(circle at 30% 30%, #4ade80, #22d3ee);
+      left: 20%; bottom: 10%;
+      animation-duration: 18s; animation-delay: -5s;
+    }
+    @keyframes move {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(120px, -150px) scale(1.2); }
+      100% { transform: translate(-150px, 120px) scale(0.9); }
+    }
+
+    /* Fade-up animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1s ease-out forwards;
+    }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .delay-1 { animation-delay: 0.3s; }
+    .delay-2 { animation-delay: 0.6s; }
+    .delay-3 { animation-delay: 0.9s; }
+
+    a, button, .hover\:scale-105 {
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Animated Background -->
+  <div class="animated-bg">
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full bg-gray-900/70 backdrop-blur-md z-50 shadow-md fade-up">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-2xl font-bold text-teal-400 hover:scale-110 transition">Kode Developers</h1>
+      <ul class="flex gap-6 text-gray-300 font-medium">
+        <li><a href="/" class="hover:text-teal-300 hover:scale-110 inline-block">Home</a></li>
+        <li><a href="BattleWale web page.html" class="hover:text-teal-300 hover:scale-110 inline-block">BattleWale</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="h-screen flex flex-col justify-center items-center text-center px-6">
+    <h2 class="text-5xl md:text-7xl font-extrabold mb-4 fade-up delay-1">
+      Meet <span class="text-teal-400">ChatKode</span>
+    </h2>
+    <p class="text-gray-300 text-lg md:text-xl max-w-2xl fade-up delay-2">
+      Your AI-powered coding buddy: chat, generate images, and build smarter apps with ease.
+    </p>
+    <a href="#features" 
+       class="mt-6 px-6 py-3 bg-teal-500 hover:bg-teal-400 rounded-xl text-white font-semibold shadow-lg fade-up delay-3">
+       Explore Features
+    </a>
+  </section>
+
+  <!-- Overview -->
+  <section class="py-20 px-6 max-w-5xl mx-auto text-center">
+  <h2 class="text-4xl font-bold mb-6 text-teal-400">ChatKode – Your AI-Assistant</h2>
+  <p class="text-gray-300 leading-relaxed mb-8">
+    ChatKode isn’t just another chatbot, it’s your <b>personal AI development assistant</b> designed 
+    to make programming faster, easier, and smarter. Whether you’re a student learning to code, a startup 
+    building its first product, or a pro developer speeding up workflow, ChatKode adapts to your style and 
+    helps you build with confidence.
+  </p>
+  <p class="text-gray-300 leading-relaxed mb-8">
+    With <b>real-time coding support</b>, <b>instant bug fixes</b>, and <b>personalized suggestions</b>, 
+    ChatKode makes problem-solving as simple as having a conversation. It supports 
+    <b>all major programming languages</b>, explains concepts in plain English, and even helps you 
+    learn best practices while coding.
+  </p>
+  <p class="text-gray-300 leading-relaxed mb-8">
+    But ChatKode goes beyond answering questions, it’s built to <b>boost your productivity</b>. 
+    From writing boilerplate code to debugging tricky errors, it saves you hours of repetitive work and 
+    lets you focus on creativity and innovation. Think of it as a mix of a mentor, teammate, and tool,  
+    all rolled into one.
+  </p>
+
+  <!-- Highlights -->
+  <div class="bg-gray-800 p-8 rounded-xl shadow-lg text-left">
+    <h3 class="text-2xl font-semibold text-teal-400 mb-4">Key Highlights:</h3>
+    <ul class="list-disc list-inside space-y-2 text-gray-300">
+      <li>Chat-based coding assistance for quick solutions</li>
+      <li>Supports all programming languages & frameworks</li>
+      <li>Real-time error fixing & code suggestions</li>
+      <li>Explains concepts for easier learning</li>
+      <li>Boosts productivity by automating repetitive tasks</li>
+    </ul>
+  </div>
+
+  <p class="text-gray-300 mt-8">
+    With ChatKode, coding isn’t just about writing lines — it’s about 
+    <span class="text-teal-400 font-semibold">building ideas that live.</span>
+  </p>
+</section>
+
+  <!-- Features -->
+  <section id="features" class="py-20 px-6 bg-gray-800/70 fade-up">
+    <h3 class="text-3xl font-bold text-center mb-12">Core Features</h3>
+    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl">
+        <h4 class="text-xl font-semibold mb-3 text-teal-400">AI Chat</h4>
+        <p class="text-gray-400">Get real-time coding answers powered by OpenAI GPT.</p>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl">
+        <h4 class="text-xl font-semibold mb-3 text-teal-400">Image Generation</h4>
+        <p class="text-gray-400">Generate custom images instantly with <code>/image</code> prompts.</p>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl">
+        <h4 class="text-xl font-semibold mb-3 text-teal-400">Smart Storage</h4>
+        <p class="text-gray-400">Save chat history, prompts, and manage sessions securely.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Features -->
+  <section class="py-20 px-6 max-w-7xl mx-auto fade-up">
+    <h3 class="text-3xl font-bold text-center mb-12">Premium Features (Coming Soon)</h3>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border border-gray-700 rounded-lg overflow-hidden">
+        <thead class="bg-gray-700 text-teal-300">
+          <tr>
+            <th class="p-3">Feature</th>
+            <th class="p-3">Free Version</th>
+            <th class="p-3">Premium Version</th>
+          </tr>
+        </thead>
+        <tbody class="bg-gray-800 divide-y divide-gray-700 text-gray-300">
+          <tr class="hover:bg-gray-700 transition"><td class="p-3">Daily Usage Limit</td><td class="p-3">Limited</td><td class="p-3">Unlimited</td></tr>
+          <tr class="hover:bg-gray-700 transition"><td class="p-3">Image Generation</td><td class="p-3">Few images</td><td class="p-3">Unlimited</td></tr>
+          <tr class="hover:bg-gray-700 transition"><td class="p-3">Theme Customization</td><td class="p-3">Basic only</td><td class="p-3">Extra themes</td></tr>
+          <tr class="hover:bg-gray-700 transition"><td class="p-3">Ads</td><td class="p-3">Shown</td><td class="p-3">Ad-free</td></tr>
+          <tr class="hover:bg-gray-700 transition"><td class="p-3">High Priority API</td><td class="p-3">No</td><td class="p-3">Yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+ <!-- Footer -->
+  <footer class="text-center p-6 mt-10 bg-gray-800 border-t border-gray-700 text-sm text-gray-400">
+    &copy; 2025 Kode Developers. All rights reserved.
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
