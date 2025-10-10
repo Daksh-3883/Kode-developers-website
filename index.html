@@ -1,125 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kode Developers - Professional Web Development & AI Solutions | Transform Your Ideas</title>
-  <meta name="description" content="Kode Developers specializes in AI-powered applications, game development, and modern web solutions. Get professional quotes for ChatKode, BattleWale, and custom web projects." />
-  <meta name="keywords" content="web development, AI applications, ChatKode, BattleWale, game development, responsive design, Indian developers" />
-  <meta name="author" content="Kode Developers" />
+  <meta name="description" content="Kode Developers specializes in AI-powered applications, game development, and modern web solutions. Get professional quotes for ChatKode, BattleWale, and custom web projects.">
+  <meta name="keywords" content="web development, AI applications, ChatKode, BattleWale, game development, responsive design, Indian developers">
+  <meta name="author" content="Kode Developers">
+  
+  <!-- Open Graph tags for social media -->
+  <meta property="og:title" content="Kode Developers - Professional Web Development & AI Solutions">
+  <meta property="og:description" content="Transform your ideas into powerful digital solutions. Specializing in AI-powered apps, games, and modern web development.">
+  <meta property="og:image" content="https://kodedevelopers.netlify.app/kodeDevelopers.webp">
+  <meta property="og:url" content="https://kodedevelopers.netlify.app">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kode Developers">
+  
+  <!-- Twitter Card tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kode Developers - Professional Web Development & AI Solutions">
+  <meta name="twitter:description" content="Transform your ideas into powerful digital solutions. Specializing in AI-powered apps, games, and modern web development.">
+  <meta name="twitter:image" content="https://kodedevelopers.netlify.app/kodeDevelopers.webp">
+  
+  <!-- Additional SEO meta tags -->
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kodedevelopers.netlify.app">
+  <meta name="theme-color" content="#5eead4">
 
-  <!-- Open Graph + Twitter -->
-  <meta property="og:title" content="Kode Developers - Professional Web Development & AI Solutions" />
-  <meta property="og:description" content="Transform your ideas into powerful digital solutions. Specializing in AI-powered apps, games, and modern web development." />
-  <meta property="og:image" content="https://kodedevelopers.netlify.app/kodeDevelopers.webp" />
-  <meta property="og:url" content="https://kodedevelopers.netlify.app" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Kode Developers" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Kode Developers - Professional Web Development & AI Solutions" />
-  <meta name="twitter:description" content="Transform your ideas into powerful digital solutions. Specializing in AI-powered apps, games, and modern web development." />
-  <meta name="twitter:image" content="https://kodedevelopers.netlify.app/kodeDevelopers.webp" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://kodedevelopers.netlify.app" />
-  <meta name="theme-color" content="#5eead4" />
-
-  <!-- Tailwind CDN (utility classes) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Your custom stylesheet -->
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- Defer the UI script (will handle mobile menu, dark mode, active nav, etc.) -->
-  <script src="script.js" defer></script>
+  <script src="https://cdn.tailwindcss.com">
+	  // Rating system
+function setRating(stars) {
+  const starsEl = document.querySelectorAll("#rating span");
+  starsEl.forEach((star, i) => {
+    star.classList.toggle("text-yellow-400", i < stars);
+    star.classList.toggle("text-gray-500", i >= stars);
+  });
+  document.getElementById("ratingMsg").classList.remove("hidden");
+}
+</script>
+	html {
+  scroll-behavior: smooth;
+}
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-900 text-white font-sans transition-colors duration-300">
+<body class="bg-gray-900 text-white font-sans">
 
-  <!-- Animated Background (decorative) -->
-  <div class="animated-bg pointer-events-none" aria-hidden="true">
+  <!-- Animated Background -->
+  <div class="animated-bg">
     <div class="blob"></div>
     <div class="blob"></div>
     <div class="blob"></div>
   </div>
 
   <!-- Navbar -->
-  <nav id="mainNav" class="fixed top-0 left-0 w-full bg-[rgba(17,24,39,0.7)] backdrop-blur-md z-50 shadow-md">
+  <nav class="fixed top-0 left-0 w-full bg-gray-900/70 backdrop-blur-md z-50 shadow-md fade-up">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-6 py-4">
-      <a href="#home" class="text-xl md:text-2xl font-bold text-teal-400 hover:scale-105 transition-transform">Kode Developers</a>
-
+      <h1 class="text-xl md:text-2xl font-bold text-teal-400 hover:scale-110 transition">Kode Developers</h1>
+      
       <div class="flex items-center gap-4">
-        <!-- Desktop navigation -->
-        <ul class="hidden md:flex gap-6 text-gray-300 font-medium" id="navLinks">
-          <li><a href="#home" class="nav-link hover:text-teal-300">Home</a></li>
-          <li><a href="#about" class="nav-link hover:text-teal-300">About</a></li>
-          <li><a href="#services" class="nav-link hover:text-teal-300">Services</a></li>
-          <li><a href="#projects" class="nav-link hover:text-teal-300">Projects</a></li>
-          <li><a href="#contact" class="nav-link hover:text-teal-300">Contact</a></li>
-        </ul>
-
         <!-- Dark mode toggle -->
-        <button id="darkModeToggle" aria-label="Toggle dark mode" class="text-gray-300 hover:text-teal-400 p-2 rounded-lg hover:bg-gray-800/50">
-          <svg id="darkIcon" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+        <button id="darkModeToggle" class="text-gray-300 hover:text-teal-400 transition-colors p-2 rounded-lg hover:bg-gray-800/50">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
           </svg>
         </button>
-
+        
         <!-- Mobile menu button -->
-        <button id="mobileMenuBtn" class="md:hidden text-white p-2 rounded-lg hover:bg-gray-800/50">
+        <button id="mobileMenuBtn" class="md:hidden text-white focus:outline-none">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
+        
+        <!-- Desktop navigation -->
+        <ul class="hidden md:flex gap-6 text-gray-300 font-medium">
+          <li><a href="#home" class="nav-link hover:text-teal-300 hover:scale-110 inline-block">Home</a></li>
+          <li><a href="#about" class="nav-link hover:text-teal-300 hover:scale-110 inline-block">About</a></li>
+          <li><a href="#services" class="nav-link hover:text-teal-300 hover:scale-110 inline-block">Services</a></li>
+          <li><a href="#projects" class="nav-link hover:text-teal-300 hover:scale-110 inline-block">Projects</a></li>
+          <li><a href="#contact" class="nav-link hover:text-teal-300 hover:scale-110 inline-block">Contact</a></li>
+        </ul>
       </div>
-    </div>
-
-    <!-- Mobile navigation (hidden by default) -->
-    <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full bg-[rgba(17,24,39,0.95)] backdrop-blur-md shadow-lg">
-      <ul class="flex flex-col py-4 text-gray-300 font-medium">
-        <li><a href="#home" class="nav-link block px-6 py-3 hover:bg-gray-800 hover:text-teal-300">Home</a></li>
-        <li><a href="#about" class="nav-link block px-6 py-3 hover:bg-gray-800 hover:text-teal-300">About</a></li>
-        <li><a href="#services" class="nav-link block px-6 py-3 hover:bg-gray-800 hover:text-teal-300">Services</a></li>
-        <li><a href="#projects" class="nav-link block px-6 py-3 hover:bg-gray-800 hover:text-teal-300">Projects</a></li>
-        <li><a href="#contact" class="nav-link block px-6 py-3 hover:bg-gray-800 hover:text-teal-300">Contact</a></li>
-      </ul>
+      
+      <!-- Mobile navigation -->
+      <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full bg-gray-900/95 backdrop-blur-md shadow-lg">
+        <ul class="flex flex-col py-4 text-gray-300 font-medium">
+          <li><a href="#home" class="nav-link block px-6 py-3 hover:bg-gray-800 hover:text-teal-300">Home</a></li>
+          <li><a href="#about" class="nav-link block px-6 py-3 hover:bg-gray-800 hover:text-teal-300">About</a></li>
+          <li><a href="#services" class="nav-link block px-6 py-3 hover:bg-gray-800 hover:text-teal-300">Services</a></li>
+          <li><a href="#projects" class="nav-link block px-6 py-3 hover:bg-gray-800 hover:text-teal-300">Projects</a></li>
+          <li><a href="#contact" class="nav-link block px-6 py-3 hover:bg-gray-800 hover:text-teal-300">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
   <!-- Hero -->
   <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-6">
-    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 fade-up delay-1 leading-tight">
       We Build <span class="text-teal-400">Ideas that Live</span>
     </h1>
-    <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-8 leading-relaxed">
+    <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-8 fade-up delay-2 leading-relaxed">
       Building smarter apps with passion & precision. Transform your vision into powerful digital solutions.
     </p>
-    <div class="flex flex-col sm:flex-row gap-4">
-      <a href="#contact"
+    <div class="flex flex-col sm:flex-row gap-4 fade-up delay-3">
+      <a href="#contact" 
          class="px-8 py-4 border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white rounded-xl font-bold shadow-lg hover:scale-105 transition-all duration-300 text-lg">
          Get a Quote
       </a>
-      <a href="#projects"
+      <a href="#projects" 
          class="px-8 py-4 border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white rounded-xl font-bold shadow-lg hover:scale-105 transition-all duration-300 text-lg">
          See Our Work
       </a>
     </div>
   </section>
 
-  <!-- About / Logo -->
-  <section class="px-6 py-12 max-w-3xl mx-auto text-center">
-    <img src="kodeDevelopers.webp" alt="Kode Developers logo" class="rounded-2xl shadow-xl mx-auto hover:scale-105 transition duration-500" loading="lazy" />
-  </section>
+  <!-- About -->
+	<!-- logo -->
+<section class="px-6 py-12 max-w-3xl mx-auto text-center fade-up">
+  <img src="kodeDevelopers.webp" 
+       alt="Kode Developers logo" 
+       class="rounded-2xl shadow-xl mx-auto hover:scale-105 transition duration-500" loading="lazy">
+</section>
 
-  <section id="about" class="py-16 md:py-20 px-6 max-w-6xl mx-auto text-center">
+  <section id="about" class="py-16 md:py-20 px-6 max-w-6xl mx-auto text-center fade-up">
     <h2 class="text-2xl md:text-3xl font-bold mb-6">About Us</h2>
     <p class="text-gray-300 leading-relaxed max-w-3xl mx-auto text-sm md:text-base">
-      At Kode Developers, we believe every great product starts with a spark of imagination.
-      Founded by Divyanshu, our journey began with a bold vision: to turn raw ideas into powerful digital realities.
-      Guided by our tagline, "we build ideas that live," we design and develop solutions that don't just exist, they thrive.
+        At Kode Developers, we believe every great product starts with a spark of imagination.
+	Founded by Divyanshu, our journey began with a bold vision: to turn raw ideas into powerful digital realities.
+	Guided by our tagline, "we build ideas that live," we design and develop solutions that don't just exist, they thrive, adapt, and make an impact.
+	From sleek websites to scalable applications, our focus is on creating technology that feels alive, purposeful, and future-ready.
+	What sets us apart is our blend of innovation, precision, and human-centered design, because we know it's not just about code, it's about people.
+	At Kode Developers, we're not just building projects; we're building possibilities, and we're excited to bring yours to life.
     </p>
   </section>
 
   <!-- Services -->
-  <section id="services" class="py-16 md:py-20 px-6 bg-[rgba(31,41,55,0.7)]">
+  <section id="services" class="py-16 md:py-20 px-6 bg-gray-800/70 fade-up">
     <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Our Services</h2>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 max-w-6xl mx-auto">
       <div class="bg-gray-900 p-4 md:p-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300">
@@ -138,25 +155,30 @@
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="py-16 md:py-20 px-6 max-w-7xl mx-auto">
+  <section id="projects" class="py-16 md:py-20 px-6 max-w-7xl mx-auto fade-up">
     <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Our Projects</h2>
     <div class="grid lg:grid-cols-2 gap-6 md:gap-10">
       <div class="bg-gray-800 p-6 md:p-8 rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 group">
         <h3 class="text-xl md:text-2xl font-bold mb-3 text-teal-400 group-hover:text-teal-300">ChatKode</h3>
-        <p class="text-gray-400 mb-4 text-sm md:text-base">ChatKode is an AI-powered assistant designed to help developers build apps faster and smarter.</p>
-        <ul class="list-disc list-inside mb-5 space-y-2 text-gray-400 text-sm md:text-base">
+        <p class="text-gray-400 mb-4 text-sm md:text-base">ChatKode is an AI-powered assistant designed to help developers, students, and tech enthusiasts 
+          build apps faster and smarter. It offers instant code suggestions, real-time fixes, and personalized development tips.</p>
+	<ul class="list-disc list-inside mb-5 space-y-2 text-gray-400 text-sm md:text-base">
           <li class="hover:translate-x-2 transition duration-300">Chat-based coding assistance</li>
           <li class="hover:translate-x-2 transition duration-300">Supports all programming languages</li>
+          <li class="hover:translate-x-2 transition duration-300">Personalized suggestions</li>
+          <li class="hover:translate-x-2 transition duration-300">Boosts productivity</li>
         </ul>
-        <a class="text-teal-400 underline mt-3 inline-block hover:text-teal-300 group-hover:translate-x-2 transition-all duration-300 text-sm md:text-base" href="/chatkode">Know More →</a>
+        <a class='text-teal-400 underline mt-3 inline-block hover:text-teal-300 group-hover:translate-x-2 transition-all duration-300 text-sm md:text-base' href='/chatkode'>Know More →</a>
       </div>
-
       <div class="bg-gray-800 p-6 md:p-8 rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 group">
         <h3 class="text-xl md:text-2xl font-bold mb-3 text-teal-400 group-hover:text-teal-300">BattleWale</h3>
-        <p class="text-gray-400 mb-4 text-sm md:text-base">BattleWaale is a fast-paced, action-strategy game inspired by Indian culture.</p>
+        <p class="text-gray-400 mb-4 text-sm md:text-base">BattleWaale is a fast-paced, action-strategy game inspired by Indian culture. Build your squad, master unique skills, 
+          and outsmart opponents in thrilling multiplayer battles. It's highlights are:-</p>
         <ul class="list-disc list-inside mb-5 space-y-2 text-gray-400 text-sm md:text-base">
           <li class="hover:translate-x-2 transition">Strategic 1v1 & team battles</li>
           <li class="hover:translate-x-2 transition">Unique Indian-inspired characters</li>
+          <li class="hover:translate-x-2 transition">Offline training + online modes</li>
+          <li class="hover:translate-x-2 transition">Skill-based matchmaking</li>
         </ul>
         <a href="BattleWale web page.html" class="text-teal-400 underline mt-3 inline-block hover:text-teal-300 group-hover:translate-x-2 transition-all duration-300 text-sm md:text-base">Know More →</a>
       </div>
@@ -164,134 +186,130 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-16 md:py-20 px-6 bg-[rgba(31,41,55,0.7)] text-center">
+  <section id="contact" class="py-16 md:py-20 px-6 bg-gray-800/70 text-center fade-up">
     <h2 class="text-2xl md:text-3xl font-bold mb-6 text-white">Get in Touch</h2>
 
     <div class="w-full max-w-3xl mx-auto relative">
-      <iframe
+      <iframe 
         id="contactForm"
-        src="https://docs.google.com/forms/d/e/1FAIpQLScORZjd4WH-oeUJ7bxB7uLqxcjX06RbojgIORBHoOIxoTtHaA/viewform?embedded=true"
-        width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0"
+        src="https://docs.google.com/forms/d/e/1FAIpQLScORZjd4WH-oeUJ7bxB7uLqxcjX06RbojgIORBHoOIxoTtHaA/viewform?embedded=true" 
+        width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0"
         class="rounded-xl shadow-lg border border-gray-700">
         Loading…
       </iframe>
 
-      <div id="successPopup" class="hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-900 text-white p-6 rounded-xl shadow-2xl border border-teal-500 w-80">
+      <!-- Success Popup -->
+      <div id="successPopup" 
+           class="hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                  bg-gray-900 text-white p-6 rounded-xl shadow-2xl border border-teal-500 w-80">
         <h4 class="text-xl font-bold text-teal-400 mb-2">✅ Message Sent!</h4>
         <p class="text-gray-300">Thank you for reaching out. We'll get back to you soon.</p>
-        <button onclick="closePopup()" class="mt-4 px-4 py-2 bg-teal-500 hover:bg-teal-400 rounded-lg font-semibold transition">Close</button>
+        <button onclick="closePopup()" 
+                class="mt-4 px-4 py-2 bg-teal-500 hover:bg-teal-400 rounded-lg font-semibold transition">
+          Close
+        </button>
       </div>
     </div>
 
     <p class="text-gray-400 mt-8 text-lg">
-      Or email us directly at
-      <a href="mailto:ceo@kodedevelopers.org" class="text-teal-400 hover:text-teal-300 underline">ceo@kodedevelopers.org</a>
+      Or email us directly at 
+      <a href="mailto:ceo@kodedevelopers.org" class="text-teal-400 hover:text-teal-300 underline">
+        ceo@kodedevelopers.org
+      </a>
     </p>
+<!-- Rating System -->
+<div class="mt-12">
+  <h4 class="text-2xl font-semibold mb-4">Rate Your Experience</h4>
+  <div id="rating" class="flex justify-center gap-2 text-4xl text-gray-500 cursor-pointer">
+    <span onclick="setRating(1)">★</span>
+    <span onclick="setRating(2)">★</span>
+    <span onclick="setRating(3)">★</span>
+    <span onclick="setRating(4)">★</span>
+    <span onclick="setRating(5)">★</span>
+  </div>
+  <p id="ratingMsg" class="mt-4 text-teal-400 font-medium hidden">Thanks for your feedback! 🌟</p>
+</div>
 
-    <!-- Rating System -->
-    <div class="mt-12">
-      <h4 class="text-2xl font-semibold mb-4">Rate Your Experience</h4>
-      <div id="rating" class="flex justify-center gap-2 text-4xl text-gray-500 cursor-pointer" role="radiogroup" aria-label="Rate our site">
-        <span role="radio" aria-checked="false" tabindex="0" onclick="setRating(1)">★</span>
-        <span role="radio" aria-checked="false" tabindex="0" onclick="setRating(2)">★</span>
-        <span role="radio" aria-checked="false" tabindex="0" onclick="setRating(3)">★</span>
-        <span role="radio" aria-checked="false" tabindex="0" onclick="setRating(4)">★</span>
-        <span role="radio" aria-checked="false" tabindex="0" onclick="setRating(5)">★</span>
-      </div>
-      <p id="ratingMsg" class="mt-4 text-teal-400 font-medium hidden">Thanks for your feedback! 🌟</p>
-      <p id="avgRating" class="mt-2 text-gray-300 text-sm">⭐ — / 5 (0 reviews)</p>
-    </div>
   </section>
 
-  <!-- Firebase (kept exactly as provided) -->
-  <script type="module">
-    // Firebase imports (kept as in original - _do not change_ unless you want to secure writes)
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-    import { getFirestore, addDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-analytics.js";
+ <!-- Firebase SDKs -->
+<script type="module">
+  // Firebase imports
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+  import { getFirestore, addDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-analytics.js";
 
-    // Original Firebase config (kept as requested)
-    const firebaseConfig = {
-      apiKey: "AIzaSyBVRZrGx78BmGmPJefevUU_eVko7isfkHs",
-      authDomain: "website-b25f8.firebaseapp.com",
-      projectId: "website-b25f8",
-      storageBucket: "website-b25f8.firebasestorage.app",
-      messagingSenderId: "493868723517",
-      appId: "1:493868723517:web:152b112e64dfe9d28e6954",
-      measurementId: "G-19W6S73YRE"
-    };
+  // ✅ Your Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyBVRZrGx78BmGmPJefevUU_eVko7isfkHs",
+    authDomain: "website-b25f8.firebaseapp.com",
+    projectId: "website-b25f8",
+    storageBucket: "website-b25f8.firebasestorage.app",
+    messagingSenderId: "493868723517",
+    appId: "1:493868723517:web:152b112e64dfe9d28e6954",
+    measurementId: "G-19W6S73YRE"
+  };
 
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    const analytics = getAnalytics(app);
+  // Init Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const analytics = getAnalytics(app);
 
-    // === Rating System (single authoritative implementation) ===
-    export async function setRating(stars) {
-      const starsEl = document.querySelectorAll("#rating span");
-      starsEl.forEach((star, i) => {
-        star.classList.toggle("text-yellow-400", i < stars);
-        star.classList.toggle("text-gray-500", i >= stars);
-        // accessibility
-        star.setAttribute("aria-checked", i < stars ? "true" : "false");
+  // === Rating System ===
+  async function setRating(stars) {
+    const starsEl = document.querySelectorAll("#rating span");
+    starsEl.forEach((star, i) => {
+      star.classList.toggle("text-yellow-400", i < stars);
+      star.classList.toggle("text-gray-500", i >= stars);
+    });
+
+    document.getElementById("ratingMsg").classList.remove("hidden");
+    document.getElementById("ratingMsg").innerText = `Thanks! You rated us ${stars}★`;
+
+    try {
+      await addDoc(collection(db, "ratings"), {
+        stars: stars,
+        timestamp: new Date()
       });
-
-      const ratingMsg = document.getElementById("ratingMsg");
-      ratingMsg.classList.remove("hidden");
-      ratingMsg.innerText = `Thanks! You rated us ${stars}★`;
-
-      try {
-        await addDoc(collection(db, "ratings"), {
-          stars: stars,
-          timestamp: new Date()
-        });
-        console.log("✅ Rating saved:", stars);
-        loadAverageRating();
-      } catch (e) {
-        console.error("❌ Error saving rating: ", e);
-      }
+      console.log("✅ Rating saved:", stars);
+      loadAverageRating();
+    } catch (e) {
+      console.error("❌ Error saving rating: ", e);
     }
+  }
 
-    // Load average rating
-    export async function loadAverageRating() {
-      try {
-        const snapshot = await getDocs(collection(db, "ratings"));
-        let total = 0, count = 0;
-        snapshot.forEach(doc => {
-          total += doc.data().stars;
-          count++;
-        });
+  // === Load Average Rating ===
+  async function loadAverageRating() {
+    const snapshot = await getDocs(collection(db, "ratings"));
+    let total = 0, count = 0;
 
-        if (count > 0) {
-          const avg = (total / count).toFixed(1);
-          document.getElementById("avgRating").innerText = `⭐ ${avg} / 5 (${count} reviews)`;
-        } else {
-          document.getElementById("avgRating").innerText = "⭐ — / 5 (0 reviews)";
-        }
-      } catch (e) {
-        console.error("❌ Error loading ratings:", e);
-      }
+    snapshot.forEach(doc => {
+      total += doc.data().stars;
+      count++;
+    });
+
+    if (count > 0) {
+      const avg = (total / count).toFixed(1);
+      document.getElementById("avgRating").innerText = `⭐ ${avg} / 5 (${count} reviews)`;
     }
+  }
 
-    // expose to global scope so inline onclick works
-    window.setRating = setRating;
-    window.loadAverageRating = loadAverageRating;
+  // Load avg on page load
+  loadAverageRating();
 
-    // initial load
-    loadAverageRating();
-  </script>
+  // Expose to global scope so HTML onclick works
+  window.setRating = setRating;
+</script>
 
-  <!-- Site script (UI behavior, dark mode, nav) -->
-  <!-- script.js is already linked with defer in head -->
+<script src="script.js"></script>
 
-  <!-- Footer -->
-  <footer class="text-center p-6 mt-10 bg-[rgba(31,41,55,0.7)] border-t border-gray-700 text-sm text-gray-400">
+ <!-- Footer -->
+  <footer class="text-center p-6 mt-10 bg-gray-800 border-t border-gray-700 text-sm text-gray-400">
     &copy; 2025 Kode Developers. All rights reserved.
   </footer>
+	
 </body>
 </html>
-
-
-
 
 
 
