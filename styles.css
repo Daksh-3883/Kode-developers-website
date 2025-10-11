@@ -76,51 +76,37 @@ section ul li:hover {
   transform: translateX(8px);
 }
 
-/* Animated background blobs */
-.animated-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-}
-
-.animated-bg .blob {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: #4fd1c5; /* teal-400 */
-  border-radius: 50%;
-  opacity: 0.2;
-  animation: blobAnim 20s infinite;
-}
-
-.animated-bg .blob:nth-child(2) {
-  background: #38b2ac; /* teal-500 */
-  animation-delay: 5s;
-}
-
-.animated-bg .blob:nth-child(3) {
-  background: #319795; /* teal-300 */
-  animation-delay: 10s;
-}
-
-@keyframes blobAnim {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  25% {
-    transform: translate(200px, -100px) scale(1.2);
-  }
-  50% {
-    transform: translate(-150px, 200px) scale(0.8);
-  }
-  75% {
-    transform: translate(100px, -200px) scale(1.1);
-  }
-}
+/* Blob Background */
+    .animated-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1; overflow: hidden;
+      filter: url(#gooey);
+    }
+    .blob {
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #06b6d4, #3b82f6);
+      animation: move 20s infinite alternate ease-in-out;
+      mix-blend-mode: screen; opacity: 0.6;
+    }
+    .blob:nth-child(2) {
+      background: radial-gradient(circle at 30% 30%, #f97316, #facc15);
+      left: 40%; top: 20%;
+      animation-duration: 25s; animation-delay: -10s;
+    }
+    .blob:nth-child(3) {
+      background: radial-gradient(circle at 30% 30%, #4ade80, #22d3ee);
+      left: 20%; bottom: 10%;
+      animation-duration: 18s; animation-delay: -5s;
+    }
+    @keyframes move {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(120px, -150px) scale(1.2); }
+      100% { transform: translate(-150px, 120px) scale(0.9); }
+    }
 
 /* Rating stars */
 #rating span {
