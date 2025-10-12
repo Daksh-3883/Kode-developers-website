@@ -36,13 +36,17 @@
 <body class="bg-gray-900 text-white font-sans">
 
   <!-- Navbar -->
-<nav class="fixed top-4 left-1/2 transform -translate-x-1/2 
-     bg-gray-900/80 backdrop-blur-xl rounded-full shadow-lg z-50 
-     border border-gray-700/50 px-6 py-3 w-[90%] md:w-auto fade-up transition-all duration-300">
-  <div class="flex justify-between items-center gap-6">
+<!-- Rounded Responsive Navbar -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 bg-gray-900/80 
+     backdrop-blur-xl rounded-full shadow-lg border border-gray-700/50 
+     px-6 py-3 w-[90%] md:w-auto z-50 transition-all duration-300">
+  <div class="flex justify-between items-center">
+    <!-- Logo -->
     <h1 class="text-lg md:text-xl font-bold text-teal-400 hover:scale-110 transition">
       Kode Developers
     </h1>
+
+    <!-- Desktop Nav Links -->
     <ul class="hidden md:flex gap-6 text-gray-300 font-medium">
       <li><a href="#home" class="nav-link hover:text-teal-300 hover:scale-110 inline-block">Home</a></li>
       <li><a href="#about" class="nav-link hover:text-teal-300 hover:scale-110 inline-block">About</a></li>
@@ -50,8 +54,34 @@
       <li><a href="#projects" class="nav-link hover:text-teal-300 hover:scale-110 inline-block">Projects</a></li>
       <li><a href="#contact" class="nav-link hover:text-teal-300 hover:scale-110 inline-block">Contact</a></li>
     </ul>
+
+    <!-- Mobile Menu Button -->
+    <button id="menu-btn" class="md:hidden text-teal-400 text-2xl focus:outline-none">
+      ☰
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden flex-col mt-4 text-gray-300 font-medium bg-gray-900/90 
+       rounded-3xl p-5 backdrop-blur-xl shadow-lg border border-gray-700/40">
+    <a href="#home" class="nav-link py-2 hover:text-teal-300">Home</a>
+    <a href="#about" class="nav-link py-2 hover:text-teal-300">About</a>
+    <a href="#services" class="nav-link py-2 hover:text-teal-300">Services</a>
+    <a href="#projects" class="nav-link py-2 hover:text-teal-300">Projects</a>
+    <a href="#contact" class="nav-link py-2 hover:text-teal-300">Contact</a>
   </div>
 </nav>
+
+<!-- Optional Script -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  });
+</script>
 
   <!-- Hero -->
   <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-6">
@@ -158,4 +188,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
