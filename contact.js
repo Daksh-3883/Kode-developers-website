@@ -1,3 +1,4 @@
+// Navbar JS
 const menuBtn = document.getElementById('menu-btn');
 const bars = menuBtn.querySelectorAll('.bar');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -13,6 +14,7 @@ menuBtn.addEventListener('click', () => {
       mobileMenu.classList.remove('scale-y-0', 'opacity-0');
       mobileMenu.classList.add('scale-y-100', 'opacity-100', 'flex');
     }, 10);
+
     bars[0].classList.add('rotate-45', 'translate-y-[8px]');
     bars[1].classList.add('opacity-0');
     bars[2].classList.add('-rotate-45', '-translate-y-[8px]');
@@ -23,11 +25,12 @@ menuBtn.addEventListener('click', () => {
       mobileMenu.classList.remove('flex');
       mobileMenu.classList.add('hidden');
     }, 400);
+
     bars.forEach(bar => bar.classList.remove('rotate-45','-rotate-45','translate-y-[8px]','-translate-y-[8px]','opacity-0'));
   }
 });
 
-// Scroll effects + auto-hide
+// Scroll effects: shrink, glow, auto-hide
 let lastScrollY = window.scrollY;
 let isHidden = false;
 
@@ -49,9 +52,4 @@ window.addEventListener('scroll', () => {
   if (currentScroll > lastScrollY && currentScroll > 100 && !isHidden) {
     navbar.style.transform = 'translate(-50%, -100%)';
     isHidden = true;
-  } else if (currentScroll < lastScrollY && isHidden) {
-    navbar.style.transform = 'translate(-50%, 0)';
-    isHidden = false;
   }
-  lastScrollY = currentScroll;
-});
