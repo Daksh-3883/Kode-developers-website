@@ -11,16 +11,25 @@ a {
   text-decoration: none;
   transition: all 0.3s ease;
 }
-
-/* Navbar */
 nav {
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+nav:hover {
+  box-shadow: 0 0 20px rgba(79, 209, 197, 0.2);
+  transform: translateY(-2px);
+}
+
+.nav-link {
+  transition: all 0.2s ease;
 }
 
 .nav-link:hover {
-  color: #4fd1c5; /* teal-300 */
+  color: #4fd1c5;
   transform: scale(1.1);
 }
+
 
 /* Sections fade-up animation */
 .fade-up {
