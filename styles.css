@@ -8,25 +8,22 @@ body {
 }
 
 /*navbar*/
-nav {
-  transition: all 0.4s ease;
+/* Navbar Animations */
+@keyframes navbar-fade {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-.nav-link {
-  transition: all 0.25s ease;
+.navbar-appear {
+  animation: navbar-fade 0.5s ease forwards;
 }
 
-.nav-link:hover {
-  color: #4fd1c5;
-  transform: scale(1.1);
-}
-
-/* Smooth fade + blur pop for mobile */
-#mobile-menu {
-  filter: blur(8px);
-}
+/* Mobile menu animation (optional for extra smoothness) */
 #mobile-menu.scale-y-100 {
-  filter: blur(0);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+#mobile-menu.scale-y-0 {
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 
