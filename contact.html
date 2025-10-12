@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact Us | Kode Developers</title>
-<link href="https://cdn.tailwindcss.com" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="contact.css">
 </head>
 <body class="bg-gradient-to-b from-slate-900 via-slate-900/60 to-slate-900/80">
@@ -14,13 +14,18 @@
      backdrop-blur-xl rounded-full shadow-md border border-gray-700/50 
      px-6 py-3 w-[90%] md:w-auto z-50 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]">
   <div class="flex justify-between items-center">
+    <!-- Logo -->
     <h1 class="text-lg md:text-xl font-bold text-teal-400 hover:scale-110 transition cursor-pointer" onclick="window.location='index.html'">
       Kode Developers
     </h1>
+
+    <!-- Desktop Links -->
     <ul class="hidden md:flex gap-6 text-gray-300 font-medium">
       <li><a href="index.html#home" class="nav-link hover:text-teal-300 hover:scale-110 inline-block">Home</a></li>
       <li><a href="#contact" class="nav-link hover:text-teal-300 hover:scale-110 inline-block">Contact</a></li>
     </ul>
+
+    <!-- Mobile Menu -->
     <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[6px] focus:outline-none">
       <span class="bar w-6 h-[2px] bg-teal-400 rounded transition-all duration-300"></span>
       <span class="bar w-6 h-[2px] bg-teal-400 rounded transition-all duration-300"></span>
@@ -39,26 +44,34 @@
 <!-- Contact Section -->
 <section id="contact" class="min-h-screen flex flex-col items-center justify-center py-20 px-6 md:px-12 space-y-12">
 
-  <div class="bg-gray-900/70 backdrop-blur-xl rounded-2xl p-8 shadow-lg flex flex-col items-center text-center space-y-6 animate-fade-in">
-    <h2 class="text-4xl font-extrabold text-white">Get in Touch</h2>
-    <p class="text-gray-300">Reach us via the form below or through email and social media.</p>
-
-    <div class="flex items-center gap-3">
+  <!-- Contact Info Card -->
+  <div class="bg-gray-900/70 backdrop-blur-xl rounded-2xl p-8 shadow-lg flex flex-col items-center text-center space-y-6 fade-up">
+    <h2 class="text-4xl font-extrabold text-white fade-up">Get in Touch</h2>
+    <p class="text-gray-300 fade-up">Reach us via the form below or through email and social media.</p>
+    <div class="flex items-center gap-3 fade-up">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 0a4 4 0 01-8 0 4 4 0 018 0z"/>
       </svg>
-      <a href="mailto:ceo@kodedevelopers.org" class="text-gray-200 hover:text-teal-300 transition">ceo@kodedevelopers.org</a>
+      <a href="mailto:hello@kodedevelopers.com" class="text-gray-200 hover:text-teal-300 transition">hello@kodedevelopers.com</a>
     </div>
 
-    <div class="flex items-center gap-4 mt-4">
-      <a href="#" class="text-gray-200 hover:text-teal-300 transition" aria-label="Twitter"></a>
-      <a href="#" class="text-gray-200 hover:text-teal-300 transition" aria-label="LinkedIn"></a>
-      <a href="#" class="text-gray-200 hover:text-teal-300 transition" aria-label="GitHub"></a>
+    <!-- Social Icons -->
+    <div class="flex items-center gap-4 mt-4 fade-up">
+      <a href="#" class="social-icon text-gray-200" aria-label="Twitter">
+        <!-- Add your Twitter SVG here -->
+      </a>
+      <a href="#" class="social-icon text-gray-200" aria-label="LinkedIn">
+        <!-- Add your LinkedIn SVG here -->
+      </a>
+      <a href="#" class="social-icon text-gray-200" aria-label="GitHub">
+        <!-- Add your GitHub SVG here -->
+      </a>
     </div>
   </div>
 
-  <div class="bg-gray-900/70 backdrop-blur-xl rounded-2xl shadow-lg p-6 w-full max-w-3xl animate-slide-up">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScORZjd4WH-oeUJ7bxB7uLqxcjX06RbojgIORBHoOIxoTtHaA/viewform?embedded=true"  width="100%" height="800" class="rounded-xl border border-gray-700/40" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  <!-- Google Form Card -->
+  <div class="google-form-card bg-gray-900/70 backdrop-blur-xl rounded-2xl shadow-lg p-6 w-full max-w-3xl fade-up">
+    <iframe src="YOUR_GOOGLE_FORM_EMBED_URL_HERE" width="100%" height="800" class="rounded-xl border border-gray-700/40" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </div>
 
 </section>
@@ -66,3 +79,4 @@
 <script src="contact.js"></script>
 </body>
 </html>
+
