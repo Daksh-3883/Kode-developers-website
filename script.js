@@ -1,3 +1,6 @@
+//---------------------
+//navbar---------------
+//---------------------
 const menuBtn = document.getElementById('menu-btn');
 const bars = menuBtn.querySelectorAll('.bar');
 const mobileMenu = document.getElementById('mobile-menu');
