@@ -1,10 +1,43 @@
-@keyframes fade-in {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-@keyframes slide-up {
+/* Fade-up animation */
+@keyframes fade-up {
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
-.animate-fade-in { animation: fade-in 0.8s ease-out forwards; }
-.animate-slide-up { animation: slide-up 0.9s ease-out forwards; }
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fade-up 0.8s ease-out forwards;
+}
+
+/* Pulse animation for social icons */
+@keyframes pulse-hover {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.social-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  animation: pulse-hover 0.6s ease-in-out forwards;
+  color: #4fd1c5;
+}
+
+/* Google Form card hover lift */
+.google-form-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.google-form-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(79, 209, 197, 0.2);
+}
