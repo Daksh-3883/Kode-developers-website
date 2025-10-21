@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BattleWale - Fast-Paced Strategy Game | Kode Developers</title>
-  <meta name="description" content="BattleWale by Kode Developers: Strategy game inspired by Indian culture. Learn about characters, rankings, upcoming features, and more.">
-  <meta name="author" content="Kode Developers">
-  <meta name="theme-color" content="#5eead4">
-
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>BattleWale - Kode Developers</title>
+  <meta name="description" content="BattleWale - Fast-paced strategy game inspired by Indian culture. Developed by Kode Developers.">
   <link rel="stylesheet" href="battlewaale.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>html { scroll-behavior: smooth; }</style>
 </head>
 <body class="bg-gray-900 text-white font-sans overflow-x-hidden">
 
@@ -28,8 +26,8 @@
     <div class="flex justify-between items-center">
       <h1 class="text-lg md:text-xl font-bold text-teal-400 hover:scale-110 transition cursor-pointer glow-text" onclick="window.location='index.html'">Kode Developers</h1>
       <ul class="hidden md:flex gap-6 text-gray-300 font-medium">
-        <li><a href="index.html#home" class="nav-link hover:text-teal-300 hover:scale-110 inline-block">Home</a></li>
-        <li><a href="#developer-info" class="nav-link hover:text-teal-300 hover:scale-110 inline-block">Info</a></li>
+        <li><a href="index.html" class="nav-link hover:text-teal-300 hover:scale-110 inline-block">Home</a></li>
+        <li><a href="#contact" class="nav-link hover:text-teal-300 hover:scale-110 inline-block">Contact</a></li>
       </ul>
       <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[6px] focus:outline-none">
         <span class="bar w-6 h-[2px] bg-teal-400 rounded transition-all duration-300"></span>
@@ -38,24 +36,21 @@
       </button>
     </div>
     <div id="mobile-menu" class="hidden flex-col mt-4 text-gray-300 font-medium bg-gray-900/80 rounded-3xl p-5 backdrop-blur-2xl shadow-lg border border-gray-700/40 transform scale-y-0 origin-top opacity-0 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]">
-      <a href="index.html#home" class="nav-link py-2 hover:text-teal-300">Home</a>
-      <a href="#developer-info" class="nav-link py-2 hover:text-teal-300">Info</a>
+      <a href="index.html" class="nav-link py-2 hover:text-teal-300">Home</a>
+      <a href="#contact" class="nav-link py-2 hover:text-teal-300">Contact</a>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
-    <h1 id="heroTitle" class="text-5xl md:text-7xl font-extrabold mb-6 fade-up delay-1 leading-tight glow-text">BattleWale: <span class="text-teal-400">Strategy Meets Action</span></h1>
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 fade-up delay-1 leading-tight glow-text">BattleWale <span class="text-teal-400">– Strategy with Indian Flair</span></h1>
     <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-8 fade-up delay-2 leading-relaxed">
-      Fast-paced Indian-inspired strategy game with unique characters and abilities.
+      Fast-paced strategy game inspired by Indian culture. Plan, fight, and dominate!
     </p>
-    <a href="#developer-info" class="px-8 py-4 border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white rounded-xl font-bold shadow-lg hover:scale-105 transition-all duration-300 text-lg fade-up delay-3">
-      Explore Characters
-    </a>
   </section>
 
   <!-- Developer Info -->
-  <section id="developer-info" class="py-16 md:py-20 px-6 fade-up max-w-5xl mx-auto">
+  <section class="py-16 md:py-20 px-6 fade-up max-w-5xl mx-auto">
     <h2 class="text-3xl font-bold text-teal-300 mb-4 border-b border-gray-700 pb-2">Developer Info</h2>
     <ul class="list-disc list-inside space-y-2 text-gray-300">
       <li><b>Developer:</b> Kode Developers</li>
@@ -71,7 +66,7 @@
     <!-- Common Characters -->
     <h3 class="text-2xl font-semibold text-yellow-300 mb-3">Common Characters</h3>
     <div class="overflow-x-auto">
-      <table class="border border-gray-700 rounded-lg overflow-hidden w-full">
+      <table class="border border-gray-700 rounded-lg overflow-hidden">
         <thead class="bg-gray-700 text-teal-300">
           <tr><th>Name</th><th>DOB</th><th>Native State</th><th>Ability</th></tr>
         </thead>
@@ -87,7 +82,7 @@
     <!-- Uncommon Characters -->
     <h3 class="text-2xl font-semibold text-green-300 mb-3">Uncommon Characters</h3>
     <div class="overflow-x-auto">
-      <table class="border border-gray-700 rounded-lg overflow-hidden w-full">
+      <table class="border border-gray-700 rounded-lg overflow-hidden">
         <thead class="bg-gray-700 text-teal-300">
           <tr><th>Name</th><th>DOB</th><th>Native State</th><th>Ability</th></tr>
         </thead>
@@ -103,7 +98,7 @@
     <!-- Rare Characters -->
     <h3 class="text-2xl font-semibold text-blue-300 mb-3">Rare Characters</h3>
     <div class="overflow-x-auto">
-      <table class="border border-gray-700 rounded-lg overflow-hidden w-full">
+      <table class="border border-gray-700 rounded-lg overflow-hidden">
         <thead class="bg-gray-700 text-teal-300">
           <tr><th>Name</th><th>DOB</th><th>Native State</th><th>Ability</th></tr>
         </thead>
@@ -120,7 +115,7 @@
     <!-- Epic Characters -->
     <h3 class="text-2xl font-semibold text-purple-300 mb-3">Epic Characters</h3>
     <div class="overflow-x-auto">
-      <table class="border border-gray-700 rounded-lg overflow-hidden w-full">
+      <table class="border border-gray-700 rounded-lg overflow-hidden">
         <thead class="bg-gray-700 text-teal-300">
           <tr><th>Name</th><th>DOB</th><th>Native State</th><th>Ability</th></tr>
         </thead>
@@ -135,7 +130,7 @@
     <!-- Legendary Characters -->
     <h3 class="text-2xl font-semibold text-red-300 mb-3">Legendary Characters</h3>
     <div class="overflow-x-auto">
-      <table class="border border-gray-700 rounded-lg overflow-hidden w-full">
+      <table class="border border-gray-700 rounded-lg overflow-hidden">
         <thead class="bg-gray-700 text-teal-300">
           <tr><th>Name</th><th>DOB</th><th>Native State</th><th>Ability</th></tr>
         </thead>
@@ -149,7 +144,7 @@
 
   </section>
 
-  <!-- Ranking & Upcoming Features -->
+  <!-- Ranking & Upcoming -->
   <section class="py-16 md:py-20 px-6 fade-up max-w-5xl mx-auto">
     <h2 class="text-3xl font-bold text-teal-300 mb-4 border-b border-gray-700 pb-2">Ranking System</h2>
     <ul class="list-disc list-inside space-y-2 text-gray-300">
@@ -174,7 +169,7 @@
     </ul>
   </section>
 
-  <!-- User Interface -->
+  <!-- UI -->
   <section class="py-16 md:py-20 px-6 fade-up max-w-5xl mx-auto">
     <h2 class="text-3xl font-bold text-teal-300 mb-4 border-b border-gray-700 pb-2">User Interface</h2>
     <ul class="list-disc list-inside space-y-2 text-gray-300">
@@ -194,8 +189,6 @@
       <li>Custom badges & 2D art</li> </ul> 
   </section>
 
-
-  <!-- Footer -->
   <footer class="text-center p-6 mt-10 bg-gray-800 border-t border-gray-700 text-sm text-gray-400">
     &copy; 2025 Kode Developers. All rights reserved.
   </footer>
