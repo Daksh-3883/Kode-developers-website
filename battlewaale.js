@@ -1,36 +1,40 @@
 // ===================== NAVBAR & MOBILE MENU =====================
 const menuBtn = document.getElementById('menu-btn');
-const bars = menuBtn.querySelectorAll('.bar');
 const mobileMenu = document.getElementById('mobile-menu');
 const navbar = document.getElementById('navbar');
 
-menuBtn.addEventListener('click', () => {
-  const isOpen = mobileMenu.classList.contains('flex');
-  if(!isOpen){
-    mobileMenu.classList.remove('hidden');
-    setTimeout(() => {
-      mobileMenu.classList.remove('scale-y-0','opacity-0');
-      mobileMenu.classList.add('scale-y-100','opacity-100','flex');
-    }, 10);
-    bars[0].classList.add('rotate-45','translate-y-[8px]');
-    bars[1].classList.add('opacity-0');
-    bars[2].classList.add('-rotate-45','-translate-y-[8px]');
-  } else {
-    mobileMenu.classList.remove('scale-y-100','opacity-100');
-    mobileMenu.classList.add('scale-y-0','opacity-0');
-    setTimeout(() => { 
-      mobileMenu.classList.remove('flex'); 
-      mobileMenu.classList.add('hidden'); 
-    }, 400);
-    bars.forEach(bar => bar.classList.remove('rotate-45','-rotate-45','translate-y-[8px]','-translate-y-[8px]','opacity-0'));
-  }
-});
+if(menuBtn && mobileMenu && navbar){
+  const bars = menuBtn.querySelectorAll('.bar');
+
+  menuBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.contains('flex');
+    if(!isOpen){
+      mobileMenu.classList.remove('hidden');
+      setTimeout(() => {
+        mobileMenu.classList.remove('scale-y-0','opacity-0');
+        mobileMenu.classList.add('scale-y-100','opacity-100','flex');
+      }, 10);
+      bars[0]?.classList.add('rotate-45','translate-y-[8px]');
+      bars[1]?.classList.add('opacity-0');
+      bars[2]?.classList.add('-rotate-45','-translate-y-[8px]');
+    } else {
+      mobileMenu.classList.remove('scale-y-100','opacity-100');
+      mobileMenu.classList.add('scale-y-0','opacity-0');
+      setTimeout(() => { 
+        mobileMenu.classList.remove('flex'); 
+        mobileMenu.classList.add('hidden'); 
+      }, 400);
+      bars.forEach(bar => bar.classList.remove('rotate-45','-rotate-45','translate-y-[8px]','-translate-y-[8px]','opacity-0'));
+    }
+  });
+}
 
 // ===================== NAVBAR SCROLL EFFECT =====================
 let lastScrollY = window.scrollY; 
 let isHidden = false;
 
 window.addEventListener('scroll', () => {
+  if(!navbar) return;
   const currentScroll = window.scrollY;
 
   // Shrink & glow
@@ -62,29 +66,31 @@ window.addEventListener('scroll', () => {
 
 // ===================== FADE-UP SECTION REVEAL =====================
 const fadeEls = document.querySelectorAll('.fade-up');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
-    }
-  });
-},{threshold:0.1});
-fadeEls.forEach(el => observer.observe(el));
+if(fadeEls.length > 0){
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.1});
+  fadeEls.forEach(el => observer.observe(el));
+}
 
 // ===================== CURSOR FOLLOWER =====================
 const cursor = document.getElementById('cursorGlow');
+if(cursor){
+  document.addEventListener('mousemove', e => {
+    cursor.style.top = `${e.clientY}px`;
+    cursor.style.left = `${e.clientX}px`;
+  });
 
-document.addEventListener('mousemove', e => {
-  cursor.style.top = `${e.clientY}px`;
-  cursor.style.left = `${e.clientX}px`;
-});
-
-// Cursor enlarge on hover
-document.querySelectorAll('a, button').forEach(el => {
-  el.addEventListener('mouseenter', ()=> cursor.style.width = cursor.style.height = '40px');
-  el.addEventListener('mouseleave', ()=> cursor.style.width = cursor.style.height = '20px');
-});
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', ()=> cursor.style.width = cursor.style.height = '40px');
+    el.addEventListener('mouseleave', ()=> cursor.style.width = cursor.style.height = '20px');
+  });
+}
 
 // ===================== HERO PARALLAX (OPTIONAL) =====================
 const heroTitle = document.querySelector('#home h1');
@@ -95,3 +101,4 @@ if(heroTitle){
     heroTitle.style.transform = `translate(${moveX}px, ${moveY}px)`;
   });
 }
+
