@@ -14,13 +14,7 @@ html {
 
 /* ===================== NAVBAR ===================== */
 #navbar {
-  background-color: rgba(17,24,39,0.4);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(75,85,99,0.3);
-  transition: transform 0.6s cubic-bezier(0.4,0,0.2,1),
-              box-shadow 0.3s ease,
-              background-color 0.3s ease,
-              border-color 0.3s ease;
+  transition: transform 0.6s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 /* ===================== FADE-UP SECTIONS ===================== */
@@ -40,17 +34,16 @@ html {
 .fade-up.delay-3 { transition-delay: 0.6s; }
 
 /* ===================== GLASS CARDS ===================== */
-.glass-card, .section-glass {
+.glass-card {
   background: rgba(30, 41, 59, 0.6);
   border: 1px solid rgba(94, 234, 212, 0.2);
   backdrop-filter: blur(12px);
   border-radius: 1rem;
   box-shadow: 0 0 25px rgba(94, 234, 212, 0.05);
   transition: all 0.4s ease;
-  padding: 1.5rem;
 }
 
-.glass-card:hover, .section-glass:hover {
+.glass-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 35px rgba(94, 234, 212, 0.15);
 }
@@ -59,28 +52,19 @@ html {
 table {
   border-collapse: collapse;
   min-width: 600px;
-  border-radius: 0.75rem;
-  overflow: hidden;
-}
-
-thead {
-  background-color: #374151; /* gray-700 */
-  color: #5eead4; /* teal-400 */
-  font-weight: bold;
-}
-
-tbody {
-  background-color: #1f2937; /* gray-800 */
-  color: #d1d5db; /* gray-300 */
-}
-
-tbody tr:hover {
-  background-color: #4b5563; /* gray-700 hover */
 }
 
 th, td {
   padding: 0.75rem 1rem;
   text-align: left;
+}
+
+thead {
+  font-weight: bold;
+}
+
+tbody tr:hover {
+  background-color: #374151; /* gray-700 hover */
 }
 
 /* ===================== BLOBS ===================== */
@@ -146,7 +130,6 @@ th, td {
   transform: translate(-50%, -50%);
   transition: width 0.2s ease, height 0.2s ease;
   z-index: 9999;
-  mix-blend-mode: difference;
 }
 
 /* ===================== CUSTOM SCROLLBAR ===================== */
@@ -164,5 +147,5 @@ th, td {
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 768px) {
   nav ul { display: none; }
-  table { min-width: 100%; display: block; overflow-x: auto; }
+  table { min-width: 100%; }
 }
