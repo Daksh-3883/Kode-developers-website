@@ -119,6 +119,19 @@ tbody tr:hover {
                0 0 40px rgba(45, 212, 191, 0.3);
 }
 
+/* ===================== CURSOR GLOW ===================== */
+#cursorGlow {
+  position: fixed;
+  top: 0; left: 0;
+  width: 20px; height: 20px;
+  background-color: rgba(45, 212, 191, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease;
+  z-index: 9999;
+}
+
 /* ===================== CUSTOM SCROLLBAR ===================== */
 ::-webkit-scrollbar {
   width: 8px;
