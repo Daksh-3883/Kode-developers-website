@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BattleWaale – Know More</title>
-  <meta name="description" content="BattleWaale – A game inspired by Indian culture, blending strategy, action, and tradition.">
-  <meta name="keywords" content="BattleWaale, Indian game, Kode Developers, strategy, action, multiplayer">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BattleWale - Fast-Paced Strategy Game | Kode Developers</title>
+  <meta name="description" content="BattleWale by Kode Developers: Strategy game inspired by Indian culture. Learn about characters, rankings, upcoming features, and more.">
+  <meta name="author" content="Kode Developers">
+  <meta name="theme-color" content="#5eead4">
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="battlewaale.css" />
+  <link rel="stylesheet" href="battlewaale.css">
 </head>
 <body class="bg-gray-900 text-white font-sans overflow-x-hidden">
+
+  <!-- Cursor Follower -->
+  <div id="cursorGlow"></div>
 
   <!-- Animated Blob Background -->
   <div class="animated-bg">
@@ -22,16 +23,13 @@
     <div class="blob"></div>
   </div>
 
-  <!-- Cursor Glow -->
-  <div id="cursorGlow"></div>
-
   <!-- Navbar -->
-  <nav id="navbar" class="fixed top-4 left-1/2 -translate-x-1/2 bg-gray-900/40 backdrop-blur-xl rounded-full shadow-md border border-gray-700/50 px-6 py-3 w-[90%] md:w-auto z-50 transition-all duration-500">
+  <nav id="navbar" class="fixed top-4 left-1/2 -translate-x-1/2 bg-gray-900/40 backdrop-blur-xl rounded-full shadow-md border border-gray-700/50 px-6 py-3 w-[90%] md:w-auto z-50 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]">
     <div class="flex justify-between items-center">
-      <h1 class="text-lg md:text-xl font-bold text-teal-400 hover:scale-110 transition cursor-pointer glow-text" onclick="window.location='index.html'">BattleWaale</h1>
+      <h1 class="text-lg md:text-xl font-bold text-teal-400 hover:scale-110 transition cursor-pointer glow-text" onclick="window.location='index.html'">Kode Developers</h1>
       <ul class="hidden md:flex gap-6 text-gray-300 font-medium">
-        <li><a href="index.html" class="hover:text-teal-300 hover:scale-110 inline-block">Home</a></li>
-        <li><a href="ChatKode.html" class="hover:text-teal-300 hover:scale-110 inline-block">ChatKode</a></li>
+        <li><a href="index.html#home" class="nav-link hover:text-teal-300 hover:scale-110 inline-block">Home</a></li>
+        <li><a href="#developer-info" class="nav-link hover:text-teal-300 hover:scale-110 inline-block">Info</a></li>
       </ul>
       <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[6px] focus:outline-none">
         <span class="bar w-6 h-[2px] bg-teal-400 rounded transition-all duration-300"></span>
@@ -39,67 +37,29 @@
         <span class="bar w-6 h-[2px] bg-teal-400 rounded transition-all duration-300"></span>
       </button>
     </div>
-    <div id="mobile-menu" class="hidden flex-col mt-4 text-gray-300 font-medium bg-gray-900/80 rounded-3xl p-5 backdrop-blur-2xl shadow-lg border border-gray-700/40 transform scale-y-0 origin-top opacity-0 transition-all duration-500">
-      <a href="index.html" class="py-2 hover:text-teal-300">Home</a>
-      <a href="ChatKode.html" class="py-2 hover:text-teal-300">ChatKode</a>
+    <div id="mobile-menu" class="hidden flex-col mt-4 text-gray-300 font-medium bg-gray-900/80 rounded-3xl p-5 backdrop-blur-2xl shadow-lg border border-gray-700/40 transform scale-y-0 origin-top opacity-0 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]">
+      <a href="index.html#home" class="nav-link py-2 hover:text-teal-300">Home</a>
+      <a href="#developer-info" class="nav-link py-2 hover:text-teal-300">Info</a>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section id="hero" class="h-screen flex flex-col justify-center items-center text-center px-6">
-    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 fade-up delay-1">
-      Welcome to <span class="text-teal-400 glow-text">BattleWaale</span>
-    </h1>
-    <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-8 fade-up delay-2">
-      Master your fighting skills.
+  <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+    <h1 id="heroTitle" class="text-5xl md:text-7xl font-extrabold mb-6 fade-up delay-1 leading-tight glow-text">BattleWale: <span class="text-teal-400">Strategy Meets Action</span></h1>
+    <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-8 fade-up delay-2 leading-relaxed">
+      Fast-paced Indian-inspired strategy game with unique characters and abilities.
     </p>
-    <a href="#overview" class="px-8 py-4 border-2 border-teal-500 text-teal-400 hover:bg-teal-500 hover:text-white rounded-xl font-bold shadow-lg hover:scale-105 transition-all duration-300 fade-up delay-3">
-      Explore the Game
+    <a href="#developer-info" class="px-8 py-4 border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white rounded-xl font-bold shadow-lg hover:scale-105 transition-all duration-300 text-lg fade-up delay-3">
+      Explore Characters
     </a>
   </section>
 
-  <!-- Overview -->
-  <section id="overview" class="py-16 md:py-20 px-6 max-w-5xl mx-auto fade-up">
-    <h2 class="text-4xl font-bold mb-6 text-teal-400 text-center">BattleWaale – A Game Inspired by Indian Culture</h2>
-    <p class="text-gray-300 leading-relaxed mb-8">
-      BattleWaale is a fast-paced, action-strategy game that blends <b>modern gameplay mechanics</b>
-      with the richness of <b>Indian culture</b>. Designed for players who love strategy and thrill, 
-      it lets you build your squad, master unique skills, and outsmart opponents in exciting multiplayer battles.
-    </p>
-    <p class="text-gray-300 leading-relaxed mb-8">
-      The game combines <b>strategy, action, and culture</b> into one engaging experience. 
-      Whether you’re battling 1v1, leading a team, or training offline, BattleWaale challenges your 
-      tactical thinking while keeping the gameplay fun and immersive.
-    </p>
-    <p class="text-gray-300 leading-relaxed mb-8">
-      With <b>skill-based matchmaking</b>, vibrant character designs, and multiple modes, 
-      BattleWaale is built to keep players hooked — whether you’re a casual gamer or a competitive strategist.
-    </p>
-
-     <!-- Highlights -->
-    <div class="glass-card p-6">
-      <h3 class="text-2xl font-semibold text-teal-400 mb-4">Key Highlights</h3>
-      <ul class="list-disc list-inside space-y-2 text-gray-300">
-        <li>Strategic 1v1 and team-based battles</li>
-        <li>Unique characters inspired by Indian culture</li>
-        <li>Offline training and online multiplayer modes</li>
-        <li>Skill-based matchmaking for fair play</li>
-        <li>Fast-paced, action-driven gameplay</li>
-      </ul>
-    </div>
-
-    <p class="text-gray-300 mt-8">
-      BattleWaale isn’t just a game — it’s a <span class="text-teal-400 font-semibold">cultural adventure</span>
-      that brings strategy and tradition together in one thrilling experience.
-    </p>
-  </section>
-
   <!-- Developer Info -->
-  <section class="py-16 md:py-20 px-6 fade-up max-w-5xl mx-auto">
+  <section id="developer-info" class="py-16 md:py-20 px-6 fade-up max-w-5xl mx-auto">
     <h2 class="text-3xl font-bold text-teal-300 mb-4 border-b border-gray-700 pb-2">Developer Info</h2>
     <ul class="list-disc list-inside space-y-2 text-gray-300">
       <li><b>Developer:</b> Kode Developers</li>
-      <li><b>Engine:</b> Python </li>
+      <li><b>Engine:</b> Python</li>
       <li><b>Target:</b> Cross-platform (Android)</li>
       <li><b>Libraries:</b> Kivy, KivyMD, Pillow, JSON, etc.</li>
     </ul>
@@ -111,7 +71,7 @@
     <!-- Common Characters -->
     <h3 class="text-2xl font-semibold text-yellow-300 mb-3">Common Characters</h3>
     <div class="overflow-x-auto">
-      <table class="border border-gray-700 rounded-lg overflow-hidden">
+      <table class="border border-gray-700 rounded-lg overflow-hidden w-full">
         <thead class="bg-gray-700 text-teal-300">
           <tr><th>Name</th><th>DOB</th><th>Native State</th><th>Ability</th></tr>
         </thead>
@@ -127,7 +87,7 @@
     <!-- Uncommon Characters -->
     <h3 class="text-2xl font-semibold text-green-300 mb-3">Uncommon Characters</h3>
     <div class="overflow-x-auto">
-      <table class="border border-gray-700 rounded-lg overflow-hidden">
+      <table class="border border-gray-700 rounded-lg overflow-hidden w-full">
         <thead class="bg-gray-700 text-teal-300">
           <tr><th>Name</th><th>DOB</th><th>Native State</th><th>Ability</th></tr>
         </thead>
@@ -143,7 +103,7 @@
     <!-- Rare Characters -->
     <h3 class="text-2xl font-semibold text-blue-300 mb-3">Rare Characters</h3>
     <div class="overflow-x-auto">
-      <table class="border border-gray-700 rounded-lg overflow-hidden">
+      <table class="border border-gray-700 rounded-lg overflow-hidden w-full">
         <thead class="bg-gray-700 text-teal-300">
           <tr><th>Name</th><th>DOB</th><th>Native State</th><th>Ability</th></tr>
         </thead>
@@ -160,7 +120,7 @@
     <!-- Epic Characters -->
     <h3 class="text-2xl font-semibold text-purple-300 mb-3">Epic Characters</h3>
     <div class="overflow-x-auto">
-      <table class="border border-gray-700 rounded-lg overflow-hidden">
+      <table class="border border-gray-700 rounded-lg overflow-hidden w-full">
         <thead class="bg-gray-700 text-teal-300">
           <tr><th>Name</th><th>DOB</th><th>Native State</th><th>Ability</th></tr>
         </thead>
@@ -175,7 +135,7 @@
     <!-- Legendary Characters -->
     <h3 class="text-2xl font-semibold text-red-300 mb-3">Legendary Characters</h3>
     <div class="overflow-x-auto">
-      <table class="border border-gray-700 rounded-lg overflow-hidden">
+      <table class="border border-gray-700 rounded-lg overflow-hidden w-full">
         <thead class="bg-gray-700 text-teal-300">
           <tr><th>Name</th><th>DOB</th><th>Native State</th><th>Ability</th></tr>
         </thead>
@@ -189,7 +149,7 @@
 
   </section>
 
-  <!-- Ranking & Upcoming -->
+  <!-- Ranking & Upcoming Features -->
   <section class="py-16 md:py-20 px-6 fade-up max-w-5xl mx-auto">
     <h2 class="text-3xl font-bold text-teal-300 mb-4 border-b border-gray-700 pb-2">Ranking System</h2>
     <ul class="list-disc list-inside space-y-2 text-gray-300">
@@ -214,17 +174,15 @@
     </ul>
   </section>
 
-   <!-- User Interface -->
-    <section class="fade-up py-16 md:py-20 px-6 max-w-5xl mx-auto">
-      <div class="glass-card p-8 rounded-xl space-y-6">
-        <h2 class="text-3xl font-bold text-teal-300 mb-4 border-b border-gray-700 pb-2">User Interface</h2>
-        <ul class="list-disc list-inside space-y-2 text-gray-300">
-          <li>Minimalist responsive design</li>
-          <li>Custom animated icons</li>
-          <li>Lobby with interactive background</li>
-        </ul>
-      </div>
-    </section>
+  <!-- User Interface -->
+  <section class="py-16 md:py-20 px-6 fade-up max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold text-teal-300 mb-4 border-b border-gray-700 pb-2">User Interface</h2>
+    <ul class="list-disc list-inside space-y-2 text-gray-300">
+      <li>Minimalist responsive design</li>
+      <li>Custom animated icons</li>
+      <li>Lobby with interactive background</li>
+    </ul>
+  </section>
 
   <!-- Features --> 
   <section class="fade-up"> 
@@ -236,24 +194,12 @@
       <li>Custom badges & 2D art</li> </ul> 
   </section>
 
+
   <!-- Footer -->
   <footer class="text-center p-6 mt-10 bg-gray-800 border-t border-gray-700 text-sm text-gray-400">
     &copy; 2025 Kode Developers. All rights reserved.
   </footer>
 
-  <!-- JS -->
   <script src="battlewaale.js"></script>
 </body>
 </html>
-
- <!-- Features --> 
-  <section class="fade-up"> 
-    <h2 class="text-3xl font-bold text-teal-300 mb-4 border-b border-gray-700 pb-2">Main Features</h2> 
-    <ul class="list-disc list-inside space-y-2 text-gray-300">
-      <li>Tactical team-based battles</li> 
-      <li>Rank progression from Bronze to Legendary</li> 
-      <li>Offline & Online modes</li> 
-      <li>Custom badges & 2D art</li> </ul> 
-  </section>
-
-
