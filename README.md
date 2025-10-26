@@ -11,8 +11,7 @@ This repo hosts the source code for our main site, built and maintained by the *
 Our website showcases who we are, what we build, and the community we’re growing.  
 Built with **HTML**, **CSS**, and **JavaScript**, it’s designed to be lightweight, fast, and responsive — just how modern web dev should be.  
 
-**Live Demo:** [Visit on Netlify 🌍](https://your-netlify-site-url.netlify.app)  
-> *(Replace the link above with your actual Netlify URL!)*  
+**Live Demo:** [Visit on Netlify ](https://kodedevelopers.org.netlify.app)  
 
 ---
 
