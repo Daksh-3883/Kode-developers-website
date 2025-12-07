@@ -1,8 +1,7 @@
-// --------------------- NAVBAR & MOBILE MENU ---------------------
+// Navbar & Mobile Menu
 const menuBtn = document.getElementById('menu-btn');
 const bars = menuBtn.querySelectorAll('.bar');
 const mobileMenu = document.getElementById('mobile-menu');
-const navbar = document.getElementById('navbar');
 
 menuBtn.addEventListener('click', () => {
   const isOpen = mobileMenu.classList.contains('flex');
@@ -14,9 +13,9 @@ menuBtn.addEventListener('click', () => {
       mobileMenu.classList.add('scale-y-100','opacity-100','flex');
     }, 10);
 
-    bars[0].classList.add('rotate-45','translate-y-[8px]');
+    bars[0].classList.add('rotate-45','translate-y-[6px]');
     bars[1].classList.add('opacity-0');
-    bars[2].classList.add('-rotate-45','-translate-y-[8px]');
+    bars[2].classList.add('-rotate-45','-translate-y-[6px]');
   } else {
     mobileMenu.classList.remove('scale-y-100','opacity-100');
     mobileMenu.classList.add('scale-y-0','opacity-0');
@@ -25,7 +24,7 @@ menuBtn.addEventListener('click', () => {
       mobileMenu.classList.add('hidden');
     }, 400);
 
-    bars.forEach(bar => bar.classList.remove('rotate-45','-rotate-45','translate-y-[8px]','-translate-y-[8px]','opacity-0'));
+    bars.forEach(bar => bar.classList.remove('rotate-45','-rotate-45','translate-y-[6px]','-translate-y-[6px]','opacity-0'));
   }
 });
 
