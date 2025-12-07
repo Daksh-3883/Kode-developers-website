@@ -21,6 +21,37 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 fadeEls.forEach(el => observer.observe(el));
 
+// --------------------- Navbar & Mobile Menu ---------------------
+const menuBtn = document.getElementById('menu-btn');
+const bars = menuBtn.querySelectorAll('.bar');
+const mobileMenu = document.getElementById('mobile-menu');
+
+menuBtn.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.contains('flex');
+
+  if (!isOpen) {
+    mobileMenu.classList.remove('hidden');
+    setTimeout(() => {
+      mobileMenu.classList.remove('scale-y-0','opacity-0');
+      mobileMenu.classList.add('scale-y-100','opacity-100','flex');
+    }, 10);
+
+    bars[0].classList.add('rotate-45','translate-y-[6px]');
+    bars[1].classList.add('opacity-0');
+    bars[2].classList.add('-rotate-45','-translate-y-[6px]');
+  } else {
+    mobileMenu.classList.remove('scale-y-100','opacity-100');
+    mobileMenu.classList.add('scale-y-0','opacity-0');
+    setTimeout(() => {
+      mobileMenu.classList.remove('flex');
+      mobileMenu.classList.add('hidden');
+    }, 400);
+
+    bars.forEach(bar => bar.classList.remove('rotate-45','-rotate-45','translate-y-[6px]','-translate-y-[6px]','opacity-0'));
+  }
+});
+
+
 // --------------------- NAVBAR GLOW ON SCROLL ---------------------
 const navbar = document.getElementById('navbar');
 let lastScrollY = window.scrollY;
