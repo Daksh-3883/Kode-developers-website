@@ -21,4 +21,11 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- contact us -->
+  <url>
+    <loc>https://kodedevelopers.org/contact</loc>
+    <lastmod>2025-10-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
