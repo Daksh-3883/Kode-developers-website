@@ -11,7 +11,7 @@
 }
 
 .fade-up.visible {
-  opacity: 1;
+  opacity: 100;
   transform: translateY(0);
   animation: fade-up 0.8s ease-out forwards;
 }
