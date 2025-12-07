@@ -124,20 +124,14 @@ body {
 #cursorGlow {
   position: fixed;
   top: 0; left: 0;
-  width: 25px; height: 25px;
+  width: 20px; height: 20px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(90,225,210,2), rgba(90,225,210,2));
+  background: radial-gradient(circle, rgba(94,234,212,0.6), rgba(94,234,212,0));
   pointer-events: none;
   transform: translate(-50%, -50%);
   transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
   z-index: 9999;
 }
-
-/* ===================== TABLE ===================== */
-table { border-collapse: collapse; }
-th, td { border: 1px solid #4fd1c5; padding: 0.75rem; }
-th { font-weight: bold; }
-tbody tr:hover { background-color: rgba(79,209,197,0.1); transition: all 0.3s; }
 
 /* ===================== FOOTER ===================== */
 footer {
