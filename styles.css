@@ -103,18 +103,72 @@ a.btn:hover {
   transform: scale(1.05);
 }
 
-/* ===================== GLASS CARDS ===================== */
+/* ===================== STAGGERED CARD ANIMATIONS ===================== */
+#services .glass-card {
+  opacity: 0;
+  transform: translateY(25px) scale(0.98);
+  animation: cardFade 0.8s ease-out forwards;
+}
+
+#services .glass-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+#services .glass-card:nth-child(2) {
+  animation-delay: 0.35s;
+}
+#services .glass-card:nth-child(3) {
+  animation-delay: 0.5s;
+}
+#services .glass-card:nth-child(4) {
+  animation-delay: 0.65s;
+}
+
+@keyframes cardFade {
+  0% {
+    opacity: 0;
+    transform: translateY(25px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===================== GLASS CARDS UPDATED HOVER ===================== */
 .glass-card {
   background: rgba(30, 41, 59, 0.6);
-  border: 1px solid rgba(94, 234, 212, 0.2);
+  border: 1px solid rgba(94, 234, 212, 0.25);
   backdrop-filter: blur(12px);
   border-radius: 1rem;
-  box-shadow: 0 0 25px rgba(94, 234, 212, 0.05);
-  transition: all 0.4s ease;
+  box-shadow: 0 0 25px rgba(94, 234, 212, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  position: relative;
 }
+
+/* Elevated Hover */
 .glass-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 35px rgba(94, 234, 212, 0.15);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 40px rgba(94, 234, 212, 0.22);
+  border-color: rgba(94, 234, 212, 0.45);
+}
+
+/* ===================== FLOATING MICRO-MOTION (subtle) ===================== */
+.glass-card {
+  animation: floatCard 5s ease-in-out infinite alternate;
+}
+
+@keyframes floatCard {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Prevent hover conflict */
+.glass-card:hover {
+  animation: none;
 }
 
 /* ===================== PROJECTS LIST ===================== */
