@@ -1,22 +1,62 @@
-/* ===================== GENERAL ===================== */
+/* ===================== THEME VARIABLES & BASE ===================== */
+:root {
+  /* Light Theme Defaults */
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --text-muted: #4b5563;
+  --nav-bg: rgba(255, 255, 255, 0.6);
+  --nav-border: rgba(0, 0, 0, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(0, 0, 0, 0.1);
+  --card-shadow: rgba(0, 0, 0, 0.05);
+  --card-hover-border: rgba(45, 212, 191, 0.8); /* Teal hover */
+}
+
+body.dark-theme {
+  /* Dark Theme Overrides */
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --text-muted: #9ca3af;
+  --nav-bg: rgba(17, 24, 39, 0.6);
+  --nav-border: rgba(75, 85, 99, 0.3);
+  --card-bg: rgba(30, 41, 59, 0.6);
+  --card-border: rgba(94, 234, 212, 0.25);
+  --card-shadow: rgba(94, 234, 212, 0.06);
+  --card-hover-border: rgba(94, 234, 212, 0.6);
+}
+
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #1a1a1a;
-  color: #ffffff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+/* ===================== BACKGROUND CANVAS ===================== */
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* ===================== NAVBAR ===================== */
 #navbar {
+  background-color: var(--nav-bg);
+  border-color: var(--nav-border);
   transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-/* Active link animation */
 .nav-link.active {
   color: #5eead4;
   position: relative;
@@ -39,12 +79,10 @@ html {
   transform: scaleX(1);
 }
 
-/* Mobile menu tweaks */
 #mobile-menu a {
   font-size: 1rem;
   letter-spacing: 0.5px;
 }
-
 
 /* ===================== FADE-UP SECTIONS ===================== */
 .fade-up {
@@ -67,7 +105,6 @@ html {
   100% { opacity: 1; transform: scale(1) translateY(0) rotate(0deg); }
 }
 
-/* Floating loop animation */
 @keyframes logoFloat {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -76,7 +113,7 @@ html {
 #logo img {
   opacity: 0;
   animation: logoFadeInScale 1.2s ease-out forwards, logoFloat 6s ease-in-out infinite;
-  animation-delay: 0.6s, 2s; /* second animation starts after fade-in completes */
+  animation-delay: 0.6s, 2s;
   filter: drop-shadow(0 0 20px rgba(94, 234, 212, 0.5));
   transition: transform 0.5s ease, filter 0.5s ease;
 }
@@ -86,154 +123,63 @@ html {
   filter: drop-shadow(0 0 35px rgba(94, 234, 212, 0.8));
 }
 
-
-/* ===================== BUTTONS ===================== */
-a.btn {
-  padding: 1rem 2rem;
+/* ===================== GLASS CARDS ===================== */
+.glass-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(12px);
   border-radius: 1rem;
-  border: 2px solid #4fd1c5;
-  color: #4fd1c5;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  box-shadow: 0 0 25px var(--card-shadow);
+  transition: transform 0.35s ease, box-shadow 0.4s ease, border-color 0.4s ease, background-color 0.5s ease;
+  position: relative;
+  animation: floatCard 5s ease-in-out infinite alternate;
 }
 
-a.btn:hover {
-  background-color: #4fd1c5;
-  color: #1a1a1a;
-  transform: scale(1.05);
+.glass-card p {
+  color: var(--text-muted);
 }
 
-/* ===================== STAGGERED CARD ANIMATIONS ===================== */
+.glass-card h2, .glass-card h3 {
+  color: var(--text-color);
+}
+
+@keyframes floatCard {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-6px); }
+}
+
+.glass-card:hover {
+  animation: none;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 40px rgba(94, 234, 212, 0.22);
+  border-color: var(--card-hover-border);
+}
+
 #services .glass-card {
   opacity: 0;
   transform: translateY(25px) scale(0.98);
   animation: cardFade 0.8s ease-out forwards;
 }
 
-#services .glass-card:nth-child(1) {
-  animation-delay: 0.2s;
-}
-#services .glass-card:nth-child(2) {
-  animation-delay: 0.35s;
-}
-#services .glass-card:nth-child(3) {
-  animation-delay: 0.5s;
-}
-#services .glass-card:nth-child(4) {
-  animation-delay: 0.65s;
-}
+#services .glass-card:nth-child(1) { animation-delay: 0.2s; }
+#services .glass-card:nth-child(2) { animation-delay: 0.35s; }
+#services .glass-card:nth-child(3) { animation-delay: 0.5s; }
+#services .glass-card:nth-child(4) { animation-delay: 0.65s; }
 
 @keyframes cardFade {
-  0% {
-    opacity: 0;
-    transform: translateY(25px) scale(0.98);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  0% { opacity: 0; transform: translateY(25px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* ===================== GLASS CARDS UPDATED HOVER ===================== */
-.glass-card {
-  background: rgba(30, 41, 59, 0.6);
-  border: 1px solid rgba(94, 234, 212, 0.25);
-  backdrop-filter: blur(12px);
-  border-radius: 1rem;
-  box-shadow: 0 0 25px rgba(94, 234, 212, 0.06);
-  transition: transform 0.35s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-  position: relative;
-}
+section ul li { transition: transform 0.3s ease; }
+section ul li:hover { transform: translateX(8px); }
 
-/* Elevated Hover */
-.glass-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 0 40px rgba(94, 234, 212, 0.22);
-  border-color: rgba(94, 234, 212, 0.45);
-}
-
-/* ===================== FLOATING MICRO-MOTION (subtle) ===================== */
-.glass-card {
-  animation: floatCard 5s ease-in-out infinite alternate;
-}
-
-@keyframes floatCard {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-6px);
-  }
-}
-
-/* Prevent hover conflict */
-.glass-card:hover {
-  animation: none;
-}
-
-/* ===================== PROJECTS LIST ===================== */
-section ul li {
-  transition: transform 0.3s ease;
-}
-
-section ul li:hover {
-  transform: translateX(8px);
-}
-
-/* ===================== BLOBS ===================== */
-.animated-bg {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: -1;
-  overflow: hidden;
-  filter: url(#gooey);
-}
-
-.blob {
-  position: absolute;
-  width: 400px; height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #06b6d4, #3b82f6);
-  animation: move 20s infinite alternate ease-in-out, pulse 10s infinite ease-in-out;
-  mix-blend-mode: screen;
-  opacity: 0.6;
-  filter: blur(60px);
-}
-
-.blob:nth-child(2) {
-  background: radial-gradient(circle at 30% 30%, #f97316, #facc15);
-  left: 40%; top: 20%;
-  animation-duration: 25s;
-  animation-delay: -10s;
-}
-
-.blob:nth-child(3) {
-  background: radial-gradient(circle at 30% 30%, #4ade80, #22d3ee);
-  left: 20%; bottom: 10%;
-  animation-duration: 18s;
-  animation-delay: -5s;
-}
-
-@keyframes move {
-  0% { transform: translate(0,0) scale(1); }
-  50% { transform: translate(120px,-150px) scale(1.2); }
-  100% { transform: translate(-150px,120px) scale(0.9); }
-}
-
-@keyframes pulse {
-  0%,100% { transform: scale(1); opacity: 0.6; }
-  50% { transform: scale(1.1); opacity: 0.8; }
-}
-
-/* ===================== GLOW TEXT ===================== */
+/* ===================== TEXT GLOW & CURSOR ===================== */
 .glow-text {
-  text-shadow: 0 0 10px rgba(45, 212, 191, 0.7),
-               0 0 20px rgba(45, 212, 191, 0.5),
-               0 0 40px rgba(45, 212, 191, 0.3);
+  text-shadow: 0 0 10px rgba(45, 212, 191, 0.4),
+               0 0 20px rgba(45, 212, 191, 0.2);
 }
 
-/* ===================== CURSOR FOLLOWER ===================== */
 #cursorGlow {
   position: fixed;
   top: 0; left: 0;
@@ -242,38 +188,35 @@ section ul li:hover {
   background: radial-gradient(circle, rgba(94,234,212,0.6), rgba(94,234,212,0));
   pointer-events: none;
   transform: translate(-50%, -50%);
-  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+  transition: width 0.3s ease, height 0.3s ease;
   z-index: 9999;
 }
 
-/* ===================== RATING STARS ===================== */
+/* ===================== RATING & SCROLLBAR ===================== */
 #rating span {
   cursor: pointer;
   transition: color 0.3s ease, transform 0.3s ease;
 }
-#rating span:hover {
-  transform: scale(1.2);
-}
+#rating span:hover { transform: scale(1.2); }
 
-/* ===================== FOOTER ===================== */
-footer {
-  background-color: #2d3748; /* gray-800 */
-  color: #cbd5e0; /* gray-400 */
-}
-
-/* ===================== CUSTOM SCROLLBAR ===================== */
-::-webkit-scrollbar {
-  width: 8px;
-}
+::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #14b8a6, #06b6d4);
   border-radius: 10px;
 }
-::-webkit-scrollbar-track {
-  background: #111827;
-}
+::-webkit-scrollbar-track { background: var(--bg-color); }
 
-/* ===================== RESPONSIVE ===================== */
 @media (max-width: 768px) {
   nav ul { display: none; }
+}
+
+/* Disable custom cursor and parallax glow on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  #cursorGlow {
+    display: none !important;
+  }
+  /* Restore default cursor behavior for touch */
+  * {
+    cursor: auto !important;
+  }
 }
