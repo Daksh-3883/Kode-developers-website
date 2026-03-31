@@ -12,6 +12,29 @@
   --card-hover-border: rgba(45, 212, 191, 0.8); /* Teal hover */
 }
 
+/* Force theme colors on common elements */
+body.dark-theme section, 
+body.dark-theme div:not(#cursorGlow), 
+body.dark-theme h1, 
+body.dark-theme h2, 
+body.dark-theme h3, 
+body.dark-theme p {
+  color: var(--text-color) !important;
+}
+
+body.dark-theme .glass-card {
+  background-color: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+}
+
+/* Light theme overrides */
+body:not(.dark-theme) h1, 
+body:not(.dark-theme) h2, 
+body:not(.dark-theme) h3, 
+body:not(.dark-theme) p {
+  color: #1a1a1a !important; /* Force dark text in light mode */
+}
+
 body.dark-theme {
   /* Dark Theme Overrides */
   --bg-color: #000000;
