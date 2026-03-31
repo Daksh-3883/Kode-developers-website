@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic Meta Setup -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page Title -->
   <title>Kode Developers - Professional App Development & AI Solutions</title>
   
+  <!-- SEO Meta Tags -->
   <meta name="description" content="Kode Developers specializes in AI-powered applications, game development, and modern web solutions.">
   <meta name="keywords" content="web development, AI applications, ChatKode, BattleWale, game development">
+
+  <!-- Social Sharing (Open Graph + Twitter) -->
   <meta property="og:title" content="Kode Developers - Professional App Development & AI Solutions">
   <meta property="og:image" content="kodeDevelopers.webp">
   <meta name="twitter:card" content="summary_large_image">
 
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="font-sans overflow-x-hidden">
 
+  <!-- Custom Cursor Glow Effect -->
   <div id="cursorGlow"></div>
 
+  <!-- Navigation Bar -->
   <nav id="navbar" class="fixed top-4 left-1/2 -translate-x-1/2 backdrop-blur-xl rounded-full shadow-md border px-6 py-3 w-[90%] max-w-5xl z-50 transition-all duration-500">
+    
     <div class="flex justify-between items-center">
+
+      <!-- Logo / Brand Name -->
       <h1 class="text-lg md:text-xl font-bold text-teal-400 hover:scale-110 transition cursor-pointer glow-text" onclick="window.location='index.html'">
         Kode Developers
       </h1>
 
+      <!-- Desktop Navigation Links -->
       <ul class="hidden md:flex gap-8 font-medium">
         <li><a href="index.html" class="nav-link active hover:text-teal-300 transition">Home</a></li>
         <li><a href="#about" class="nav-link hover:text-teal-300 transition">About</a></li>
@@ -32,11 +48,15 @@
         <li><a href="contact.html" class="nav-link hover:text-teal-300 transition">Contact</a></li>
       </ul>
 
+      <!-- Right Side Controls -->
       <div class="flex items-center gap-4">
+
+        <!-- Theme Toggle Button -->
         <button id="theme-toggle" class="p-2 rounded-full border border-gray-500 hover:scale-110 transition-transform focus:outline-none">
           🌙
         </button>
 
+        <!-- Mobile Menu Button (Hamburger) -->
         <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[6px] focus:outline-none">
           <span class="bar w-8 h-[3px] bg-teal-400 rounded transition-all duration-300"></span>
           <span class="bar w-8 h-[3px] bg-teal-400 rounded transition-all duration-300"></span>
@@ -45,6 +65,7 @@
       </div>
     </div>
 
+    <!-- Mobile Navigation Menu -->
     <div id="mobile-menu" class="hidden flex-col mt-4 font-medium rounded-3xl p-5 backdrop-blur-2xl shadow-lg border transform scale-y-0 origin-top opacity-0 transition-all duration-400">
       <a href="index.html" class="nav-link py-2 hover:text-teal-300 transition">Home</a>
       <a href="#about" class="nav-link py-2 hover:text-teal-300 transition">About</a>
@@ -54,49 +75,70 @@
     </div>
   </nav>
 
+  <!-- Hero Section -->
   <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+    
+    <!-- Main Heading -->
     <h1 class="text-5xl md:text-7xl font-extrabold mb-6 fade-up delay-1 leading-tight glow-text">
       We Build <span class="text-teal-400">Ideas that Live</span>
     </h1>
+
+    <!-- Subtitle -->
     <p class="text-lg md:text-xl max-w-2xl mb-8 fade-up delay-2 leading-relaxed">
       Building smarter apps with passion & precision. Transform your vision into powerful digital solutions.
     </p>
+
+    <!-- Call-to-Action Buttons -->
     <div class="flex flex-col sm:flex-row gap-4 fade-up delay-3">
       <a href="#contact" class="px-8 py-4 border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white rounded-xl font-bold shadow-lg hover:scale-105 transition-all duration-300 text-lg">Get a Quote</a>
       <a href="#projects" class="px-8 py-4 border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white rounded-xl font-bold shadow-lg hover:scale-105 transition-all duration-300 text-lg">See Our Work</a>
     </div>
   </section>
 
+  <!-- Logo Section -->
   <section id="logo" class="py-10 flex justify-center items-center fade-up">
     <img src="kodeDevelopers.webp" alt="Kode Developers Logo" class="w-60 md:w-52 floating-logo">
   </section>
 
+  <!-- About Section -->
   <section id="about" class="py-16 md:py-20 px-6 max-w-6xl mx-auto text-center fade-up">
     <h2 class="text-2xl md:text-3xl font-bold mb-6">About Us</h2>
+
+    <!-- Intro Text -->
     <p class="leading-relaxed max-w-3xl mx-auto text-sm md:text-base mb-5">
       At Kode Developers, we believe every great product starts with a spark of imagination.
     </p>
+
+    <!-- Mission -->
     <h3 class="text-lg md:text-xl font-semibold mt-6 mb-4">Our Mission</h3>
     <p class="leading-relaxed max-w-3xl mx-auto text-sm md:text-base">
       Our mission is clear: make the daily life of Gen-Z people hi-tech, effortless, and smarter.
     </p>
   </section>
 
+  <!-- Services Section -->
   <section id="services" class="py-16 md:py-20 px-6 fade-up">
     <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Our Services</h2>
+
+    <!-- Services Grid -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-10 max-w-6xl mx-auto">
+
+      <!-- Service Card -->
       <div class="glass-card p-4 md:p-6">
         <h3 class="text-lg md:text-xl font-semibold mb-3 text-teal-400">AI-Powered Apps</h3>
         <p class="text-sm md:text-base">We craft intelligent tools that think, adapt, and deliver results.</p>
       </div>
+
       <div class="glass-card p-4 md:p-6">
         <h3 class="text-lg md:text-xl font-semibold mb-3 text-teal-400">Game Development</h3>
         <p class="text-sm md:text-base">We design high-impact games like BattleWale with immersive mechanics.</p>
       </div>
+
       <div class="glass-card p-4 md:p-6">
         <h3 class="text-lg md:text-xl font-semibold mb-3 text-teal-400">Web & Mobile Apps</h3>
         <p class="text-sm md:text-base">Responsive, high-performance applications designed for real-world use.</p>
       </div>
+
       <div class="glass-card p-4 md:p-6">
         <h3 class="text-lg md:text-xl font-semibold mb-3 text-teal-400">Phonk Music</h3>
         <p class="text-sm md:text-base">High-energy phonk tracks with signature cowbells and deep basslines.</p>
@@ -104,14 +146,20 @@
     </div>
   </section>
 
+  <!-- Projects Section -->
   <section id="projects" class="py-16 md:py-20 px-6 max-w-7xl mx-auto fade-up">
     <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Our Projects</h2>
+
+    <!-- Projects Grid -->
     <div class="grid lg:grid-cols-2 gap-6 md:gap-10">
+
+      <!-- Project Card -->
       <div class="glass-card p-6 md:p-8 group">
         <h3 class="text-xl md:text-2xl font-bold mb-3 text-teal-400 group-hover:text-teal-300">ChatKode</h3>
         <p class="mb-3 text-sm md:text-base">AI-powered coding assistant for developers.</p>
         <a href="/chatkode" class="text-teal-400 underline mt-3 inline-block hover:text-teal-300 transition-all duration-300 text-sm md:text-base">Know More →</a>
       </div>
+
       <div class="glass-card p-6 md:p-8 group">
         <h3 class="text-xl md:text-2xl font-bold mb-3 text-teal-400 group-hover:text-teal-300">BattleWaale</h3>
         <p class="mb-3 text-sm md:text-base">Fast-paced strategy game with Indian-inspired themes.</p>
@@ -120,8 +168,11 @@
     </div>
   </section>
 
+  <!-- Rating Section -->
   <div class="mt-12 text-center py-10">
     <h4 class="text-2xl font-semibold mb-4">Rate Your Experience</h4>
+
+    <!-- Star Rating -->
     <div id="rating" class="flex justify-center gap-2 text-4xl text-gray-500 cursor-pointer">
       <span onclick="setRating(1)">★</span>
       <span onclick="setRating(2)">★</span>
@@ -129,23 +180,18 @@
       <span onclick="setRating(4)">★</span>
       <span onclick="setRating(5)">★</span>
     </div>
+
+    <!-- Feedback Message -->
     <p id="ratingMsg" class="mt-4 text-teal-400 font-medium hidden">Thanks for your feedback! 🌟</p>
   </div>
 
+  <!-- Footer -->
   <footer class="text-center p-6 border-t text-sm">
     &copy; 2025 Kode Developers. All rights reserved.
   </footer>
 
+  <!-- Custom JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
 
