@@ -1,30 +1,27 @@
-// ===================== THEME TOGGLE =====================
+// ===================== IMPROVED THEME TOGGLE =====================
 const themeToggleBtn = document.getElementById('theme-toggle');
 
-// Helper to update the button icon
-function updateThemeIcon() {
-  if (document.body.classList.contains('dark-theme')) {
-    themeToggleBtn.textContent = '☀️'; // Show sun when dark
+function applyTheme(theme) {
+  if (theme === 'dark') {
+    document.body.classList.add('dark-theme');
+    themeToggleBtn.textContent = '☀️';
+    // Force specific tweaks for Tailwind classes that might be stubborn
+    document.querySelectorAll('.glass-card').forEach(card => card.style.backgroundColor = 'rgba(30, 41, 59, 0.6)');
   } else {
-    themeToggleBtn.textContent = '🌙'; // Show moon when light
+    document.body.classList.remove('dark-theme');
+    themeToggleBtn.textContent = '🌙';
+    document.querySelectorAll('.glass-card').forEach(card => card.style.backgroundColor = 'rgba(255, 255, 255, 0.7)');
   }
 }
 
-// Initialize Theme from Local Storage
-if (localStorage.getItem('theme') === 'dark') {
-  document.body.classList.add('dark-theme');
-}
-updateThemeIcon(); // Set initial icon
+// Load saved preference
+const savedTheme = localStorage.getItem('theme') || 'light';
+applyTheme(savedTheme);
 
 themeToggleBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dark-theme');
-  updateThemeIcon(); // Swap icon on click
-  
-  if (document.body.classList.contains('dark-theme')) {
-    localStorage.setItem('theme', 'dark');
-  } else {
-    localStorage.setItem('theme', 'light');
-  }
+  const newTheme = document.body.classList.contains('dark-theme') ? 'light' : 'dark';
+  localStorage.setItem('theme', newTheme);
+  applyTheme(newTheme);
 });
 
 // ===================== NAVBAR & MOBILE MENU =====================
