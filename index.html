@@ -3,256 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kode Developers - Professional App Development & AI Solutions | Transform Your Ideas</title>
-  <meta name="description" content="Kode Developers specializes in AI-powered applications, game development, and modern web solutions. Get professional quotes for ChatKode, BattleWale, and custom web projects.">
-  <meta name="keywords" content="web development, AI applications, ChatKode, BattleWale, game development, responsive design, Indian developers">
-  <meta name="author" content="Kode Developers">
-
-  <!-- Open Graph & Twitter -->
+  <title>Kode Developers - Professional App Development & AI Solutions</title>
+  
+  <meta name="description" content="Kode Developers specializes in AI-powered applications, game development, and modern web solutions.">
+  <meta name="keywords" content="web development, AI applications, ChatKode, BattleWale, game development">
   <meta property="og:title" content="Kode Developers - Professional App Development & AI Solutions">
-  <meta property="og:description" content="Transform your ideas into powerful digital solutions. Specializing in AI-powered apps, games, and modern web development.">
   <meta property="og:image" content="kodeDevelopers.webp">
-  <meta property="og:url" content="https://kodedevelopers.netlify.app">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Kode Developers">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Kode Developers - Professional App Development & AI Solutions">
-  <meta name="twitter:description" content="Transform your ideas into powerful digital solutions. Specializing in AI-powered apps, games, and modern web development.">
-  <meta name="twitter:image" content="kodeDevelopers.webp">
-
-  <!-- SEO -->
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://kodedevelopers.netlify.app">
-  <meta name="theme-color" content="#5eead4">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
-  <style>html { scroll-behavior: smooth; }</style>
 </head>
-<body class="bg-gray-900 text-white font-sans overflow-x-hidden">
+<body class="font-sans overflow-x-hidden">
 
-  <!-- Cursor Follower -->
   <div id="cursorGlow"></div>
 
-  <!-- Navbar -->
-<nav id="navbar" class="fixed top-4 left-1/2 -translate-x-1/2 bg-gray-900/50 backdrop-blur-xl rounded-full shadow-md border border-gray-700/50 px-6 py-3 w-[90%] max-w-5xl z-50 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]">
-  <div class="flex justify-between items-center">
-    <h1 class="text-lg md:text-xl font-bold text-teal-400 hover:scale-110 transition cursor-pointer glow-text" onclick="window.location='index.html'">
-      Kode Developers
-    </h1>
+  <nav id="navbar" class="fixed top-4 left-1/2 -translate-x-1/2 backdrop-blur-xl rounded-full shadow-md border px-6 py-3 w-[90%] max-w-5xl z-50 transition-all duration-500">
+    <div class="flex justify-between items-center">
+      <h1 class="text-lg md:text-xl font-bold text-teal-400 hover:scale-110 transition cursor-pointer glow-text" onclick="window.location='index.html'">
+        Kode Developers
+      </h1>
 
-    <!-- Desktop Links -->
-    <ul class="hidden md:flex gap-8 text-gray-300 font-medium">
-      <li><a href="index.html" class="nav-link active hover:text-teal-300 transition">Home</a></li>
-      <li><a href="#about" class="nav-link hover:text-teal-300 transition">About</a></li>
-      <li><a href="#services" class="nav-link hover:text-teal-300 transition">Services</a></li>
-      <li><a href="#projects" class="nav-link hover:text-teal-300 transition">Projects</a></li>
-      <li><a href="contact.html" class="nav-link hover:text-teal-300 transition">Contact</a></li>
-    </ul>
+      <ul class="hidden md:flex gap-8 font-medium">
+        <li><a href="index.html" class="nav-link active hover:text-teal-300 transition">Home</a></li>
+        <li><a href="#about" class="nav-link hover:text-teal-300 transition">About</a></li>
+        <li><a href="#services" class="nav-link hover:text-teal-300 transition">Services</a></li>
+        <li><a href="#projects" class="nav-link hover:text-teal-300 transition">Projects</a></li>
+        <li><a href="contact.html" class="nav-link hover:text-teal-300 transition">Contact</a></li>
+      </ul>
 
-    <!-- Theme switch -->
-    <div class="flex items-center gap-4">
-      <button id="theme-toggle" class="p-2 rounded-full border border-gray-500 hover:scale-110 transition-transform focus:outline-none">
-        🌓
-      </button>
-    <!-- Hamburger -->
-    <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[6px] focus:outline-none">
-      <span class="bar w-8 h-[3px] bg-teal-400 rounded transition-all duration-300"></span>
-      <span class="bar w-8 h-[3px] bg-teal-400 rounded transition-all duration-300"></span>
-      <span class="bar w-8 h-[3px] bg-teal-400 rounded transition-all duration-300"></span>
-    </button>
-  </div>
-</div>
+      <div class="flex items-center gap-4">
+        <button id="theme-toggle" class="p-2 rounded-full border border-gray-500 hover:scale-110 transition-transform focus:outline-none">
+          🌙
+        </button>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden flex-col mt-4 text-gray-300 font-medium bg-gray-900/80 rounded-3xl p-5 backdrop-blur-2xl shadow-lg border border-gray-700/40 transform scale-y-0 origin-top opacity-0 transition-all duration-400 ease-in-out">
-    <a href="index.html" class="nav-link py-2 hover:text-teal-300 transition">Home</a>
-    <a href="#about" class="nav-link py-2 hover:text-teal-300 transition">About</a>
-    <a href="#services" class="nav-link py-2 hover:text-teal-300 transition">Services</a>
-    <a href="#projects" class="nav-link py-2 hover:text-teal-300 transition">Projects</a>
-    <a href="contact.html" class="nav-link py-2 hover:text-teal-300 transition">Contact</a>
-  </div>
-</nav>
+        <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[6px] focus:outline-none">
+          <span class="bar w-8 h-[3px] bg-teal-400 rounded transition-all duration-300"></span>
+          <span class="bar w-8 h-[3px] bg-teal-400 rounded transition-all duration-300"></span>
+          <span class="bar w-8 h-[3px] bg-teal-400 rounded transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
 
+    <div id="mobile-menu" class="hidden flex-col mt-4 font-medium rounded-3xl p-5 backdrop-blur-2xl shadow-lg border transform scale-y-0 origin-top opacity-0 transition-all duration-400">
+      <a href="index.html" class="nav-link py-2 hover:text-teal-300 transition">Home</a>
+      <a href="#about" class="nav-link py-2 hover:text-teal-300 transition">About</a>
+      <a href="#services" class="nav-link py-2 hover:text-teal-300 transition">Services</a>
+      <a href="#projects" class="nav-link py-2 hover:text-teal-300 transition">Projects</a>
+      <a href="contact.html" class="nav-link py-2 hover:text-teal-300 transition">Contact</a>
+    </div>
+  </nav>
 
-  <!-- Hero -->
   <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
-    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 fade-up delay-1 leading-tight glow-text">We Build <span class="text-teal-400">Ideas that Live</span></h1>
-    <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-8 fade-up delay-2 leading-relaxed">Building smarter apps with passion & precision. Transform your vision into powerful digital solutions.</p>
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 fade-up delay-1 leading-tight glow-text">
+      We Build <span class="text-teal-400">Ideas that Live</span>
+    </h1>
+    <p class="text-lg md:text-xl max-w-2xl mb-8 fade-up delay-2 leading-relaxed">
+      Building smarter apps with passion & precision. Transform your vision into powerful digital solutions.
+    </p>
     <div class="flex flex-col sm:flex-row gap-4 fade-up delay-3">
       <a href="#contact" class="px-8 py-4 border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white rounded-xl font-bold shadow-lg hover:scale-105 transition-all duration-300 text-lg">Get a Quote</a>
       <a href="#projects" class="px-8 py-4 border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white rounded-xl font-bold shadow-lg hover:scale-105 transition-all duration-300 text-lg">See Our Work</a>
     </div>
   </section>
 
- <!-- Logo Section -->
-<section id="logo" class="py-10 flex justify-center items-center fade-up">
-  <img src="kodeDevelopers.webp" alt="Kode Developers Logo" 
-       class="w-60 md:w-52 hover:scale-110 transition-transform duration-500 drop-shadow-[0_0_25px_rgba(94,234,212,0.5)] floating-logo">
-</section>
+  <section id="logo" class="py-10 flex justify-center items-center fade-up">
+    <img src="kodeDevelopers.webp" alt="Kode Developers Logo" class="w-60 md:w-52 floating-logo">
+  </section>
 
+  <section id="about" class="py-16 md:py-20 px-6 max-w-6xl mx-auto text-center fade-up">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">About Us</h2>
+    <p class="leading-relaxed max-w-3xl mx-auto text-sm md:text-base mb-5">
+      At Kode Developers, we believe every great product starts with a spark of imagination.
+    </p>
+    <h3 class="text-lg md:text-xl font-semibold mt-6 mb-4">Our Mission</h3>
+    <p class="leading-relaxed max-w-3xl mx-auto text-sm md:text-base">
+      Our mission is clear: make the daily life of Gen-Z people hi-tech, effortless, and smarter.
+    </p>
+  </section>
 
-<!-- About -->
-<section id="about" class="py-16 md:py-20 px-6 max-w-6xl mx-auto text-center fade-up">
-  
-  <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-100">
-    About Us
-  </h2>
-
-  <h3 class="text-lg md:text-xl font-semibold mb-4 text-gray-200">
-    Building smarter apps with passion & precision
-  </h3>
-
-  <p class="text-gray-200 leading-relaxed max-w-3xl mx-auto text-sm md:text-base mb-5">
-    At Kode Developers, we believe every great product starts with a spark of imagination. 
-    Built with a fast-moving, future-ready mindset, our mission is to turn raw ideas into 
-    powerful digital experiences that look clean, feel smooth, and deliver real impact.
-  </p>
-
-  <p class="text-gray-200 leading-relaxed max-w-3xl mx-auto text-sm md:text-base mb-5">
-    We craft websites, apps, and digital solutions that don’t just work — they evolve, adapt, 
-    and stay relevant in a world that never stops moving. Every build reflects our core philosophy: 
-    innovate boldly, execute cleanly, and ship with intention.
-  </p>
-
-  <h3 class="text-lg md:text-xl font-semibold mt-6 mb-4 text-gray-100">
-    Our Mission
-  </h3>
-
-  <p class="text-gray-200 leading-relaxed max-w-3xl mx-auto text-sm md:text-base">
-    Our mission is clear: make the daily life of Gen-Z people hi-tech, effortless, and smarter. 
-    We design digital tools that empower young creators, students, hustlers, and founders to 
-    move faster, think bigger, and create without limits.
-  </p>
-
-</section>
-
-   <!-- Services -->
-<section id="services" class="py-16 md:py-20 px-6 bg-gray-800/70 fade-up">
-  <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Our Services</h2>
-
-  <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-10 max-w-6xl mx-auto">
-
-    <!-- AI Powered Apps (Top Left) -->
-    <div class="glass-card p-4 md:p-6">
-      <h3 class="text-lg md:text-xl font-semibold mb-3 text-teal-400">AI-Powered Apps</h3>
-      <p class="text-gray-400 text-sm md:text-base mb-2">
-        We craft intelligent tools that think, adapt, and deliver results with precision. Our flagship,
-        <b>ChatKode</b>, helps developers debug, build faster, and learn smarter through natural conversations.
-      </p>
-      <p class="text-gray-400 text-sm md:text-base">
-        From automation engines to personalized AI workflows, we bring future-ready experiences to life.
-      </p>
+  <section id="services" class="py-16 md:py-20 px-6 fade-up">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Our Services</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-10 max-w-6xl mx-auto">
+      <div class="glass-card p-4 md:p-6">
+        <h3 class="text-lg md:text-xl font-semibold mb-3 text-teal-400">AI-Powered Apps</h3>
+        <p class="text-sm md:text-base">We craft intelligent tools that think, adapt, and deliver results.</p>
+      </div>
+      <div class="glass-card p-4 md:p-6">
+        <h3 class="text-lg md:text-xl font-semibold mb-3 text-teal-400">Game Development</h3>
+        <p class="text-sm md:text-base">We design high-impact games like BattleWale with immersive mechanics.</p>
+      </div>
+      <div class="glass-card p-4 md:p-6">
+        <h3 class="text-lg md:text-xl font-semibold mb-3 text-teal-400">Web & Mobile Apps</h3>
+        <p class="text-sm md:text-base">Responsive, high-performance applications designed for real-world use.</p>
+      </div>
+      <div class="glass-card p-4 md:p-6">
+        <h3 class="text-lg md:text-xl font-semibold mb-3 text-teal-400">Phonk Music</h3>
+        <p class="text-sm md:text-base">High-energy phonk tracks with signature cowbells and deep basslines.</p>
+      </div>
     </div>
+  </section>
 
-    <!-- Game Development (Top Right) -->
-    <div class="glass-card p-4 md:p-6">
-      <h3 class="text-lg md:text-xl font-semibold mb-3 text-teal-400">Game Development</h3>
-      <p class="text-gray-400 text-sm md:text-base mb-2">
-        We design high-impact games with immersive mechanics and a strong narrative identity.
-      </p>
-      <p class="text-gray-400 text-sm md:text-base">
-        Our project <b>BattleWale</b> blends Indian cultural elements with fast-paced, modern gameplay to
-        create a unique player experience.
-      </p>
+  <section id="projects" class="py-16 md:py-20 px-6 max-w-7xl mx-auto fade-up">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Our Projects</h2>
+    <div class="grid lg:grid-cols-2 gap-6 md:gap-10">
+      <div class="glass-card p-6 md:p-8 group">
+        <h3 class="text-xl md:text-2xl font-bold mb-3 text-teal-400 group-hover:text-teal-300">ChatKode</h3>
+        <p class="mb-3 text-sm md:text-base">AI-powered coding assistant for developers.</p>
+        <a href="/chatkode" class="text-teal-400 underline mt-3 inline-block hover:text-teal-300 transition-all duration-300 text-sm md:text-base">Know More →</a>
+      </div>
+      <div class="glass-card p-6 md:p-8 group">
+        <h3 class="text-xl md:text-2xl font-bold mb-3 text-teal-400 group-hover:text-teal-300">BattleWaale</h3>
+        <p class="mb-3 text-sm md:text-base">Fast-paced strategy game with Indian-inspired themes.</p>
+        <a href="BattleWaale.html" class="text-teal-400 underline mt-3 inline-block hover:text-teal-300 transition-all duration-300 text-sm md:text-base">Know More →</a>
+      </div>
     </div>
+  </section>
 
-    <!-- Web & Mobile Apps (Bottom Left) -->
-    <div class="glass-card p-4 md:p-6">
-      <h3 class="text-lg md:text-xl font-semibold mb-3 text-teal-400">Web & Mobile Apps</h3>
-      <p class="text-gray-400 text-sm md:text-base mb-2">
-        We build responsive, high-performance applications designed for real-world use — from productivity
-        tools to community platforms.
-      </p>
-      <p class="text-gray-400 text-sm md:text-base">
-        Every interface is crafted with clean UI, smooth UX, and scalable architecture to ensure long-term stability.
-      </p>
-    </div>
-
-    <!-- Phonk Music (Bottom Right) -->
-    <div class="glass-card p-4 md:p-6">
-      <h3 class="text-lg md:text-xl font-semibold mb-3 text-teal-400">Phonk Music</h3>
-      <p class="text-gray-400 text-sm md:text-base">
-        We craft <b>high-energy phonk tracks</b> with signature cowbells, deep basslines,  
-        and atmospheric vibes inspired by modern underground culture.  
-        Perfect for apps, games, reels, promos, and hype-driven digital content.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-  <!-- Projects -->
-<section id="projects" class="py-16 md:py-20 px-6 max-w-7xl mx-auto fade-up">
-  <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">
-    Our Projects
-  </h2>
-
-  <div class="grid lg:grid-cols-2 gap-6 md:gap-10">
-
-    <!-- ChatKode -->
-    <div class="glass-card p-6 md:p-8 group">
-      <h3 class="text-xl md:text-2xl font-bold mb-3 text-teal-400 group-hover:text-teal-300">
-        ChatKode
-      </h3>
-
-      <p class="text-gray-300 mb-3 text-sm md:text-base leading-relaxed">
-        An AI-powered coding assistant designed to accelerate development workflows,
-        reduce debugging time, and help developers think in solutions—not syntax.
-      </p>
-
-      <p class="text-gray-400 mb-4 text-sm md:text-base">
-        Built for students, indie hackers, and developers who want faster output
-        without sacrificing code quality.
-      </p>
-
-      <a href="/chatkode"
-         class="text-teal-400 underline mt-3 inline-block hover:text-teal-300 group-hover:translate-x-2 transition-all duration-300 text-sm md:text-base">
-        Know More →
-      </a>
-    </div>
-
-    <!-- BattleWaale -->
-    <div class="glass-card p-6 md:p-8 group">
-      <h3 class="text-xl md:text-2xl font-bold mb-3 text-teal-400 group-hover:text-teal-300">
-        BattleWaale
-      </h3>
-
-      <p class="text-gray-300 mb-3 text-sm md:text-base leading-relaxed">
-        A fast-paced strategy game that blends competitive gameplay with
-        Indian-inspired themes, characters, and battle mechanics.
-      </p>
-
-      <p class="text-gray-400 mb-4 text-sm md:text-base">
-        Focused on skill, timing, and tactical thinking—designed to deliver
-        intense matches with cultural depth and modern visuals.
-      </p>
-
-      <a href="BattleWaale.html"
-         class="text-teal-400 underline mt-3 inline-block hover:text-teal-300 group-hover:translate-x-2 transition-all duration-300 text-sm md:text-base">
-        Know More →
-      </a>
-    </div>
-
-    <!-- Montagem do Impacto -->
-<div class="glass-card p-6 md:p-8 group lg:col-span-2">
-  <h3 class="text-xl md:text-2xl font-bold mb-3 text-teal-400 group-hover:text-teal-300">
-    Montagem do Impacto
-  </h3>
-
-  <p class="text-gray-300 mb-3 text-sm md:text-base leading-relaxed">
-    A high-energy phonk track driven by distorted basslines, aggressive cowbells,
-    and dark atmospheric textures designed to hit hard and stay memorable.
-  </p>
-
-  <p class="text-gray-400 text-sm md:text-base">
-    Built for edits, montages, and adrenaline-heavy visuals—blending raw intensity
-    with modern phonk aesthetics for maximum impact.
-  </p>
-</div>
-
-  <!-- Rating -->
-  <div class="mt-12 text-center">
+  <div class="mt-12 text-center py-10">
     <h4 class="text-2xl font-semibold mb-4">Rate Your Experience</h4>
     <div id="rating" class="flex justify-center gap-2 text-4xl text-gray-500 cursor-pointer">
       <span onclick="setRating(1)">★</span>
@@ -264,7 +132,7 @@
     <p id="ratingMsg" class="mt-4 text-teal-400 font-medium hidden">Thanks for your feedback! 🌟</p>
   </div>
 
-  <footer class="text-center p-6 mt-10 bg-gray-800 border-t border-gray-700 text-sm text-gray-400">
+  <footer class="text-center p-6 border-t text-sm">
     &copy; 2025 Kode Developers. All rights reserved.
   </footer>
 
