@@ -1,145 +1,131 @@
-/* ===================== GENERAL ===================== */
+/* ===================== <--variables--> ===================== */
+:root {
+  /* Default Light Theme Colors */
+  --bg-color: #ffffff;
+  --text-color: #1f2937;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(20, 184, 166, 0.1);
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --footer-bg: #f3f4f6;
+  --footer-text: #4b5563;
+}
+
+.dark-theme {
+  /* Dark Theme Overrides */
+  --bg-color: #0f172a;
+  --text-color: #f3f4f6;
+  --card-bg: rgba(30, 41, 59, 0.5);
+  --card-border: rgba(94, 234, 212, 0.2);
+  --nav-bg: rgba(15, 23, 42, 0.8);
+  --footer-bg: #111827;
+  --footer-text: #9ca3af;
+}
+
+/* ===================== <--general--> ===================== */
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #1a1a1a;
-  color: #fff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* ===================== BLOB BACKGROUND ===================== */
-.animated-bg {
+/* ===================== <--canvas-background--> ===================== */
+#bg-canvas {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: -1;
-  overflow: hidden;
-  filter: url(#gooey);
-}
-.blob {
-  position: absolute;
-  width: 400px; height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #06b6d4, #3b82f6);
-  animation: move 20s infinite alternate ease-in-out, pulse 10s infinite ease-in-out;
-  mix-blend-mode: screen;
-  opacity: 0.6;
-  filter: blur(60px);
-}
-.blob:nth-child(2) {
-  background: radial-gradient(circle at 30% 30%, #f97316, #facc15);
-  left: 40%; top: 20%;
-  animation-duration: 25s;
-  animation-delay: -10s;
-}
-.blob:nth-child(3) {
-  background: radial-gradient(circle at 30% 30%, #4ade80, #22d3ee);
-  left: 20%; bottom: 10%;
-  animation-duration: 18s;
-  animation-delay: -5s;
-}
-@keyframes move {
-  0% { transform: translate(0,0) scale(1); }
-  50% { transform: translate(120px,-150px) scale(1.2); }
-  100% { transform: translate(-150px,120px) scale(0.9); }
-}
-@keyframes pulse {
-  0%,100% { transform: scale(1); opacity: 0.6; }
-  50% { transform: scale(1.1); opacity: 0.8; }
+  pointer-events: none;
 }
 
-/* ===================== GLASS CARDS ===================== */
+/* ===================== <--glass-cards--> ===================== */
 .glass-card {
-  background: rgba(30,41,59,0.6);
-  border: 1px solid rgba(94,234,212,0.2);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   backdrop-filter: blur(12px);
-  border-radius: 1rem;
-  box-shadow: 0 0 25px rgba(94,234,212,0.05);
-  transition: all 0.4s ease;
-}
-.glass-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 35px rgba(94,234,212,0.15);
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.5s ease;
 }
 
-/* ===================== FADE-UP ANIMATION ===================== */
+.glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(20, 184, 166, 0.15);
+}
+
+/* ===================== <--fade-up-animation--> ===================== */
 .fade-up {
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease-out;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
 .fade-up.show {
   opacity: 1;
   transform: translateY(0);
 }
-.delay-1 { transition-delay: 0.2s; }
-.delay-2 { transition-delay: 0.4s; }
-.delay-3 { transition-delay: 0.6s; }
 
-/* ===================== NAV-BAR ===================== */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+
+/* ===================== <--navbar-styles--> ===================== */
 #navbar {
-  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s ease, background-color 0.3s ease;
+  background-color: var(--nav-bg);
+  border-color: var(--card-border);
+  transition: all 0.4s ease;
 }
 
-/* Active link animation */
-.nav-link.active {
-  color: #5eead4;
+.nav-link {
+  color: var(--text-color);
   position: relative;
+  opacity: 0.8;
 }
 
-.nav-link.active::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 2px;
-  background: #5eead4;
-  border-radius: 2px;
-  margin-top: 3px;
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
+.nav-link:hover, .nav-link.active {
+  opacity: 1;
+  color: #2dd4bf; /* Teal-400 */
 }
 
-.nav-link.active:hover::after,
-.nav-link.active::after {
-  transform: scaleX(1);
-}
-
-/* Mobile menu tweaks */
-#mobile-menu a {
-  font-size: 1rem;
-  letter-spacing: 0.5px;
-}
-
-
-/* ===================== GLOW TEXT ===================== */
+/* ===================== <--glow-text--> ===================== */
 .glow-text {
-  text-shadow: 0 0 10px rgba(45, 212, 191, 0.7),
-               0 0 20px rgba(45, 212, 191, 0.5),
-               0 0 40px rgba(45, 212, 191, 0.3);
+  text-shadow: 0 0 15px rgba(45, 212, 191, 0.4);
 }
 
-/* ===================== CURSOR ===================== */
+/* ===================== <--cursor-glow--> ===================== */
 #cursorGlow {
   position: fixed;
-  top: 0; left: 0;
-  width: 20px; height: 20px;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(94, 234, 212, 0.5) 0%, rgba(94, 234, 212, 0) 70%);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(94,234,212,0.6), rgba(94,234,212,0));
   pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
   z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
 }
 
-/* ===================== FOOTER ===================== */
+/* Hide cursor glow on touch devices */
+@media (hover: none) {
+  #cursorGlow { display: none; }
+}
+
+/* ===================== <--footer--> ===================== */
 footer {
-  background-color: #2d3748;
-  color: #cbd5e0;
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  border-color: var(--card-border);
+  transition: background-color 0.5s ease;
 }
 
-/* ===================== RESPONSIVE ===================== */
-@media (max-width: 768px){
-  .grid { grid-template-columns: 1fr !important; }
+/* ===================== <--responsive-grid--> ===================== */
+@media (max-width: 768px) {
+  .grid {
+    gap: 1.5rem;
+  }
 }
