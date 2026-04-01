@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic Meta Configuration -->
+  <!-- Basic Meta Setup -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -12,10 +12,10 @@
   <meta name="description" content="ChatKode – AI-powered coding assistant for faster, smarter development. Chat, generate images, and boost productivity.">
   <meta name="keywords" content="ChatKode, AI assistant, coding help, image generation, productivity, Kode Developers">
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Custom Styles -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="chatkode.css">
 </head>
 
@@ -25,11 +25,11 @@
   <div id="cursorGlow"></div>
 
   <!-- Navigation Bar -->
-  <nav id="navbar" class="fixed top-4 left-1/2 -translate-x-1/2 backdrop-blur-xl rounded-full shadow-md border px-6 py-3 w-[90%] max-w-5xl z-50 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]">
+  <nav id="navbar" class="fixed top-4 left-1/2 -translate-x-1/2 backdrop-blur-xl rounded-full shadow-md border px-6 py-3 w-[90%] max-w-5xl z-50 transition-all duration-500">
     
     <div class="flex justify-between items-center">
 
-      <!-- Logo / Brand -->
+      <!-- Logo / Brand Name -->
       <h1 class="text-lg md:text-xl font-bold text-teal-400 hover:scale-110 transition cursor-pointer glow-text" onclick="window.location='index.html'">
         Kode Developers
       </h1>
@@ -43,15 +43,15 @@
         <li><a href="contact.html" class="nav-link hover:text-teal-300 transition">Contact</a></li>
       </ul>
 
-      <!-- Right Side Controls -->
+      <!-- Right Controls (Theme + Mobile Menu) -->
       <div class="flex items-center gap-4">
-        
+
         <!-- Theme Toggle Button -->
         <button id="theme-toggle" class="p-2 rounded-full border border-gray-500 hover:scale-110 transition-transform focus:outline-none">
           🌙
         </button>
 
-        <!-- Mobile Menu Toggle (Hamburger Icon) -->
+        <!-- Mobile Menu Button -->
         <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[6px] focus:outline-none">
           <span class="bar w-8 h-[3px] bg-teal-400 rounded transition-all duration-300"></span>
           <span class="bar w-8 h-[3px] bg-teal-400 rounded transition-all duration-300"></span>
@@ -61,7 +61,7 @@
     </div>
 
     <!-- Mobile Navigation Menu -->
-    <div id="mobile-menu" class="hidden flex-col mt-4 font-medium rounded-3xl p-5 backdrop-blur-2xl shadow-lg border transform scale-y-0 origin-top opacity-0 transition-all duration-400 ease-in-out">
+    <div id="mobile-menu" class="hidden flex-col mt-4 font-medium rounded-3xl p-5 backdrop-blur-2xl shadow-lg border transform scale-y-0 origin-top opacity-0 transition-all duration-400">
       <a href="index.html" class="nav-link py-2 hover:text-teal-300 transition">Home</a>
       <a href="#features" class="nav-link py-2 hover:text-teal-300 transition">Features</a>
       <a href="#overview" class="nav-link py-2 hover:text-teal-300 transition">Overview</a>
@@ -78,11 +78,11 @@
       Meet <span class="text-teal-400 glow-text">ChatKode</span>
     </h1>
 
-    <!-- Subtitle -->
+    <!-- Description -->
     <p class="text-lg md:text-xl max-w-2xl mb-8 fade-up delay-2">
       Your AI-powered coding buddy: chat, generate images, and build smarter apps with ease.
     </p>
-    
+
     <!-- CTA Button -->
     <a href="#features" class="px-8 py-4 border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white rounded-xl font-bold shadow-lg hover:scale-105 transition-all duration-300 fade-up delay-3">
       Explore Features
@@ -93,43 +93,38 @@
   <section id="overview" class="py-16 md:py-20 px-6 max-w-5xl mx-auto fade-up">
     
     <h2 class="text-4xl font-bold mb-6 text-teal-400 text-center">ChatKode – Your AI Assistant</h2>
-    
+
     <!-- Description Paragraphs -->
     <p class="leading-relaxed mb-6">
-      ChatKode is your <b>all-in-one AI assistant</b>, combining the powers of a coding partner, a smart chatbot, and a personal productivity tool. 
-      It helps you write, debug, and optimize code while answering your questions and guiding your workflow.
+      ChatKode is your <b>all-in-one AI assistant</b>, combining the powers of a coding partner, a smart chatbot, and a personal productivity tool.
     </p>
-    
+
     <p class="leading-relaxed mb-6">
-      As a <b>coding partner</b>, ChatKode offers real-time code suggestions, identifies errors instantly, explains best practices, and supports <b>all major programming languages</b>. 
-      Whether you’re building a website, a game, or a complex application, ChatKode adapts to your style and keeps your projects running smoothly.
+      As a <b>coding partner</b>, ChatKode offers real-time code suggestions, identifies errors instantly, explains best practices, and supports <b>all major programming languages</b>.
     </p>
-    
+
     <p class="leading-relaxed mb-6">
-      ChatKode also works as a <b>conversational AI chatbot</b>, similar to ChatGPT or Gemini. 
-      Ask questions, brainstorm ideas, clarify programming concepts, or get guidance on tasks — ChatKode responds intelligently and interactively.
+      ChatKode also works as a <b>conversational AI chatbot</b>, similar to ChatGPT or Gemini.
     </p>
-    
+
     <p class="leading-relaxed mb-6">
-      Beyond coding, it serves as a <b>learning companion</b>. New developers can understand complex programming concepts in plain English, practice with examples, and gradually improve their skills — all within a single, interactive interface.
+      Beyond coding, it serves as a <b>learning companion</b>. New developers can understand complex programming concepts in plain English.
     </p>
-    
+
     <p class="leading-relaxed mb-6">
-      ChatKode also boosts <b>productivity</b> by automating repetitive coding tasks, helping you plan workflows, summarize code, or even generate documentation. 
-      Spend less time stuck on mundane work and more time building creative, high-impact projects.
+      ChatKode also boosts <b>productivity</b> by automating repetitive coding tasks.
     </p>
-    
+
     <p class="leading-relaxed mb-6">
-      Designed for <b>students, developers, and hobbyists</b>, ChatKode combines AI-powered coding assistance, chatbot intelligence, and learning support into one seamless experience. 
-      Whether you’re debugging, brainstorming, learning, or creating, ChatKode makes your workflow faster, smarter, and more enjoyable.
+      Designed for <b>students, developers, and hobbyists</b>, ChatKode makes your workflow faster, smarter, and more enjoyable.
     </p>
   </section>
   
   <!-- Highlights Section -->
   <section id="highlights" class="px-6 max-w-5xl mx-auto fade-up">
     <div class="grid md:grid-cols-2 gap-6 mt-8">
-      
-      <!-- Key Highlights -->
+
+      <!-- Key Highlights List -->
       <div class="glass-card p-6">
         <h3 class="text-2xl font-semibold text-teal-400 mb-3">Key Highlights</h3>
         <ul class="list-disc list-inside space-y-2">
@@ -140,8 +135,8 @@
           <li>Boosts productivity with automation</li>
         </ul>
       </div>
-      
-      <!-- Supporting Description -->
+
+      <!-- Supporting Info -->
       <div class="glass-card p-6">
         <h3 class="text-2xl font-semibold text-teal-400 mb-3">Build Smarter Apps</h3>
         <p>
@@ -153,21 +148,22 @@
 
   <!-- Features Section -->
   <section id="features" class="py-16 md:py-20 px-6 fade-up">
-    <h3 class="text-3xl font-bold text-center mb-12">Core Features</h3>
     
+    <h3 class="text-3xl font-bold text-center mb-12">Core Features</h3>
+
     <!-- Features Grid -->
     <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-      
+
       <div class="glass-card p-6 hover:scale-105">
         <h4 class="text-xl font-semibold mb-3 text-teal-400">AI Chat</h4>
         <p>Real-time coding answers powered by GPT.</p>
       </div>
-      
+
       <div class="glass-card p-6 hover:scale-105">
         <h4 class="text-xl font-semibold mb-3 text-teal-400">Image Generation</h4>
         <p>Generate images instantly with <code>/image</code> prompts.</p>
       </div>
-      
+
       <div class="glass-card p-6 hover:scale-105">
         <h4 class="text-xl font-semibold mb-3 text-teal-400">Smart Storage</h4>
         <p>Save chat history and manage sessions securely.</p>
@@ -177,18 +173,19 @@
 
   <!-- Use Cases Section -->
   <section id="use-cases" class="py-16 md:py-20 px-6 max-w-5xl mx-auto fade-up">
-    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-teal-400 text-center">How ChatKode Helps You</h2>
     
+    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-teal-400 text-center">How ChatKode Helps You</h2>
+
     <p class="leading-relaxed mb-4">
-      ChatKode adapts to your goals and workflow. Here’s how it can assist you:
+      ChatKode adapts to your goals and workflow.
     </p>
 
-    <!-- Use Case List -->
+    <!-- Use Cases List -->
     <ul class="list-disc list-inside leading-relaxed space-y-2">
-      <li><b>Students:</b> Learn coding concepts interactively and understand every line of code.</li>
-      <li><b>Developers:</b> Speed up development with smart suggestions and automated debugging.</li>
-      <li><b>Hobbyists & Creators:</b> Experiment with new ideas, build projects faster, and get guidance on best practices.</li>
-      <li><b>AI Chat Enthusiasts:</b> ChatKode answers questions, explains concepts, and helps brainstorm projects like a true AI companion.</li>
+      <li><b>Students:</b> Learn coding concepts interactively.</li>
+      <li><b>Developers:</b> Speed up development with smart suggestions.</li>
+      <li><b>Hobbyists & Creators:</b> Experiment with new ideas.</li>
+      <li><b>AI Chat Enthusiasts:</b> ChatKode helps brainstorm projects like a true AI companion.</li>
     </ul>
   </section>
 
@@ -196,25 +193,17 @@
   <section id="premium" class="py-16 md:py-20 px-6 max-w-5xl mx-auto fade-up">
     
     <h2 class="text-3xl md:text-4xl font-bold mb-6 text-teal-400 text-center">Premium Features</h2>
-    
+
     <p class="leading-relaxed mb-6">
-     Upgrade to ChatKode Premium and unlock the full power of AI coding. 
-     Get advanced suggestions, priority debugging, and exclusive features that supercharge your workflow. 
-     The premium plan is designed for creators who want to code smarter and faster.
+     Upgrade to ChatKode Premium and unlock the full power of AI coding.
     </p>
-    
+
     <!-- Premium Features List -->
     <ul class="list-disc list-inside leading-relaxed space-y-2 mb-6">
-      <li><b>Advanced AI Suggestions:</b> Get smarter, context-aware code completions.</li>
-      <li><b>Priority Debugging:</b> Identify and fix errors faster with AI insights.</li>
-      <li><b>Extended Chat Intelligence:</b> Ask complex questions and receive detailed explanations.</li>
-      <li><b>Learning Mode:</b> Interactive lessons and explanations tailored to your projects.</li>
-      <li><b>Faster Responses:</b> Premium users enjoy quicker processing and higher reliability.</li>
+      <li><b>Advanced AI Suggestions:</b> Get smarter code completions.</li>
+      <li><b>Priority Debugging:</b> Identify and fix errors faster.</li>
+      <li><b>Faster Responses:</b> Premium users enjoy quicker processing.</li>
     </ul>
-    
-    <p class="leading-relaxed">
-      Upgrade and experience the ultimate combination of coding help, AI chat, and productivity assistance — all in one platform.
-    </p>
   </section>
 
   <!-- Footer -->
